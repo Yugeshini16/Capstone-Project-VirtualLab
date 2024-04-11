@@ -1,0 +1,36 @@
+.footer{
+    background-image: url('../../assets/bg.jpg');
+    width: 100%;
+    height: 340px;
+}
+
+.btns{
+    padding: 170px 0 170px 0;
+    text-align: center;
+    
+}
+
+.Widebtn,
+.playbtn{
+    margin-left: 50px;
+    margin-right: 50px;
+    width: 240px;
+    height: 60px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    font-family: 'poppins';
+    font-weight: 600;
+}
+
+.Widebtn{
+    background-color: #151854;
+    color: #fff;
+    
+}
+
+.playbtn{
+    background: #ADB0EF;
+    color: #fff;
+}

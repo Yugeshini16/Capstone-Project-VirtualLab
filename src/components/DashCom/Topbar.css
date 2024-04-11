@@ -1,0 +1,109 @@
+
+.content--header{
+    display: flex;
+    align-items: center;
+    background-color:rgb(16,17,39);
+    height: 100px;
+    margin-bottom: 1px;
+    border-bottom: #fff 2px solid;
+    margin-left: 292px;
+    width: calc(100% - 292);
+}
+.header--activity{
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+
+
+.search-box{
+    background: #21222a;
+    padding: 1px 2px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border:solid white 0.9px;
+   width: 300px;
+    height: 41px;
+    margin-left: 20px;
+}
+
+.search-box input{
+    outline: #fff;
+    background: transparent;
+    padding: 5px;
+    color: white;
+    border: none;
+}
+
+.fa{
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    background: transparent;
+    padding-right: 10px;
+}
+.fa1{
+    font-size: 22px;
+
+}
+.notify1{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 420px;
+
+    width: 450px;
+
+}
+.notify{
+   background-color: rgb(217,217,217);
+    border-radius: 10px;
+    color: #21222a;
+    display: flex;
+    align-items: center;
+    height: 55px;
+    width: 200px;
+    
+}
+.propic{
+    margin-left: 5px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #21222a;
+    overflow: hidden;
+
+}
+.profile-pic {
+    width: 45px;
+    height: 45px;
+    object-fit: cover; /* Optional: Maintain aspect ratio within the 45x45 area */
+  }
+.nameofuser li{
+   font-size: 14px;
+
+list-style: none;
+padding-left: 20px;
+}
+
+.notify .icon{
+    font-size: 20px;
+    transition: 0.5s ease-in-out; 
+    scale: 1.8;
+    
+}
+.notify1 .icon{
+    font-size: 20px;
+    transition: 0.5s ease-in-out;
+   scale: 1.8;
+   
+}
+.icon:hover{
+    transform: scale(1.3);
+    cursor: pointer;
+}

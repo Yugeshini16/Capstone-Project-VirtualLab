@@ -1,0 +1,31 @@
+.subNavContainer {
+    background-image: url(/public/pictures/Background1.png);
+    background-size: contain;
+    height: auto;
+    color: white;
+}
+
+.FirstSec {
+    margin: 60px 0 60px 0;
+}
+
+.SecondSec {
+    margin: 00px 0 100px 0;
+
+}
+
+.SubBox {
+    width: 80%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.ThirdSec {
+    margin: 100px 0 60px 0;
+
+}
+
+.LastSec {
+    padding-bottom: 60px;
+}

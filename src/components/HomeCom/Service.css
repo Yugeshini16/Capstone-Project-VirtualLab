@@ -1,0 +1,137 @@
+.containerW {
+    color: white;
+    width: 100%;
+}
+
+.whead h1{
+    color: rgb(20, 23, 83);
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    margin-top:80px ;
+}
+
+.un {
+    margin: auto;
+    margin-top: 100x;
+    height: 7px;
+    width: 600px;
+    background-color: rgb(20, 23, 83);
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.slidebar {
+    display: flex;
+    width: 100%;
+    margin:74px auto;
+}
+
+
+.last {
+    margin:1px  auto;
+    background-image: url(/public/pictures/foot.png);
+    background-size: cover;
+    height: 550px;
+    width: 85%;
+    border-radius: 40px;
+}
+
+.getstarted {
+    position: relative;
+    top: 400px;
+    float: right;
+    padding-right: 100px;
+
+}
+
+#getbtn {
+
+    color: black;
+    font-size: xx-large;
+    font-weight: bold;
+    background-color: rgb(141, 172, 207);
+    height: 80px;
+    width: 350px;
+    border-radius: 40px;
+}
+
+.end {
+    height: 20px;
+}
+
+@media (max-width: 768px) {
+
+    .last {
+        margin: auto;
+        background-image: url(/public/pictures/foot.png);
+        background-size: cover;
+        height: 550px;
+        width: 85%;
+        border-radius: 40px;
+
+    }
+
+
+    .middle,
+    .middle2 {
+        display: none;
+        width: 440px;
+        height: 245px;
+    }
+
+    .slidebar {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 5px;
+    }
+
+
+
+    .getstarted {
+        position: relative;
+        top: 250px;
+        float: right;
+        padding-right: 100px;
+
+    }
+
+    #getbtn {
+
+        color: black;
+        font-size: large;
+        font-weight: bold;
+        background-color: rgb(141, 172, 207);
+        height: 40px;
+        width: 250px;
+        border-radius: 20px;
+
+    }
+
+    .middle1 {
+        width: 440px;
+        height: 245px;
+        background-color: rgb(20, 23, 83);
+        margin: 30px;
+        border-radius: 30px;
+        top: 0;
+        left: 13px;
+        display: flex;
+    }
+
+
+    .whead {
+
+        font-size: 36px;
+
+        padding: 20px;
+
+    }
+
+
+
+    .un {
+
+        width: auto;
+
+    }
+}

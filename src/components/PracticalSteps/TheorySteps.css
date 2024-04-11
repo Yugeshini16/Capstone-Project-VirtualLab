@@ -1,0 +1,30 @@
+.contentClm{
+    display: flex;
+    flex-direction: row;
+  margin: 50px 250px 50px 250px;
+    width: 1440px;
+}
+.contentClm img{
+    width: 570px;
+    height: 700px;
+    object-fit: cover;
+justify-items: center;
+vertical-align: middle;}
+.Step{
+    width:300px;
+    height: 40px;
+    background-color: #BFCDE9;
+    border-radius: 70px;
+    display: flex;
+    flex-direction: row;
+    padding: 0 60px 40px 60px;
+    margin: 20px 50px 30px 0px;
+    text-align: center;
+
+}
+.Step h4{
+    font-size: 20px;
+    font-family: 'poppins';
+    font-weight: 600;
+    width: 500px;
+}

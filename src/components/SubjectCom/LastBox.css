@@ -1,0 +1,45 @@
+.LastBox {
+    width: 80%;
+    height: 245px;
+    background-color: rgb(20, 23, 83);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    font-size: 22px;
+  
+    padding: 51px;
+  }
+  
+  .LastBox h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 21px;
+  
+  }
+  .LastBox p {
+    font-size: 21px;
+    padding-top: 5px;
+  }
+  
+  @media only screen and (max-width: 768px) {
+  
+    .LastBox {
+      width: 100%;
+      font-size: 18px;
+  
+      margin-top: 400px;
+  
+    }
+  
+    .LastBox h1 {
+      font-size: 20px;
+  
+    }
+  
+    .LastBox p {
+      font-size: 13px;
+      padding-top: 1px;
+    }
+  }

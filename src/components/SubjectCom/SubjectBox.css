@@ -1,0 +1,46 @@
+.SubjectBox {
+    width: 208px;
+    height: 275px;
+    background-color: rgb(20, 23, 83);
+
+    border-radius: 20px;
+}
+
+.SubjectPic {
+    width: 208px;
+    height: 205px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color: rgb(255, 230, 0);
+    border: 1px solid black;
+    overflow: hidden;
+
+}
+
+.SubjectBox h1 {
+    display: block;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#image-cover {
+    width: 208px;
+    height: 205px;
+}
+
+@media (max-width: 768px) {
+
+    .SubjectBox,
+    .SubjectBox1,
+    .SubjectBox2 {
+        width: calc(50% - 50px);
+    }
+
+    #image-cover,
+    .SubjectPic {
+        width: calc(100% - 0px);
+    }
+
+}

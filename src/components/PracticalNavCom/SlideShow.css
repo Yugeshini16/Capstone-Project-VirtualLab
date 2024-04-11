@@ -1,0 +1,122 @@
+:root{
+    --primary: #BFCDE9;
+    --medium :#151854;
+    --purple:#ADB0EF;
+}
+
+.lp-slideshow {
+  padding-top: 30px;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: linear-gradient(0deg, #fff 50%, var(--medium) 50%);
+}
+
+.lp-slideshow  .container {
+  width: 100%;
+  height:620px !important;
+  text-align: center;
+  height: 700px;
+}
+
+.lp-slideshow > .container > .slide {
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  -webkit-transition: opacity 0.6s ease;
+  -moz-transition: opacity 0.6s ease;
+  -o-transition: opacity 0.6s ease;
+}
+
+.lp-slideshow > .container > .slide.active {
+  opacity: 1;
+}
+
+.lp-slideshow > .container > .slide > .image {
+  width: 1180px;
+  height: 600px;
+  align-items: center;
+  justify-content: center;
+}
+
+.lp-slideshow > .container > .slide > .caption-text {
+  color: var(--medium);
+  font-size: 36px;
+  font-weight: 600;
+  font-family: poppins;
+  padding: 10px 12px;
+  position: absolute;
+  margin:-45px 0 0 400px  ;
+  height: 50px;
+  width: 900px;
+  text-align: center;
+  background-color: var(--primary);
+
+}
+
+.lp-slideshow > .container > .prev,
+.lp-slideshow > .container > .next {
+  cursor: pointer;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top:370px;
+  border-radius: 50%;
+  box-shadow:0 4px 8px #717171;
+  font-size: 30px;
+  background-color: #fff;
+  color:var(--purple);
+  font-weight: bold;
+  transition: background-color 0.6s ease;
+  -webkit-transition: background-color 0.6s ease;
+  -moz-transition: background-color 0.6s ease;
+  -o-transition: background-color 0.6s ease;
+}
+
+.lp-slideshow:hover > .container > .prev,
+.lp-slideshow:hover > .container > .next {
+  background-color: white;
+}
+
+.lp-slideshow:hover > .container > .prev:hover,
+.lp-slideshow:hover > .container > .next:hover {
+  background-color: var(--medium);
+}
+
+.lp-slideshow > .container > .next {
+  right: 10px;
+}
+
+.lp-slideshow > .container > .prev {
+  left: 10px;
+}
+
+.lp-slideshow > .dot-container {
+margin-right: 958px;
+margin-top: -10px;
+}
+
+.lp-slideshow > .dot-container > .dot {
+  height: 10px;
+  width: 30px;
+  margin: 0.4rem;
+  background-color: #ADB0EF;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  -webkit-transition: background-color 0.6s ease;
+  -moz-transition: background-color 0.6s ease;
+  -o-transition: background-color 0.6s ease;
+}
+
+.lp-slideshow > .dot-container > .dot:hover {
+  background-color: #717171;
+}
+.lp-slideshow > .dot-container > .dot.active{
+    background-color: #6C69EC;
+    width: 50px;
+}
+
+.lp-slideshow > .dot-container > .dot:not(.active):hover {
+  cursor: pointer;
+}

@@ -1,0 +1,76 @@
+.Box {
+    width: 80%;
+    height: 376px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.BoxPic {
+    height: 376px;
+    width: 415px;
+    background-color: rgb(158, 158, 189);
+
+}
+#BoxPic{
+    width: 415px;
+    height: 376px;
+
+}
+
+.BoxPic1 {
+    height: 376px;
+    width: 777px;
+    background-color:rgb(20, 23, 83);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+    padding: 89px;
+}
+.BoxPic1 h1{
+    margin-bottom: 23px;
+    font-weight: 700;
+    font-size: 20px;
+}
+.BoxPic1 p{
+    padding:1px auto;
+    font-size: 20px;
+    font-weight: 600;
+
+
+}
+/* Use media queries to adjust styles for different screen sizes */
+@media only screen and (max-width: 768px) {
+
+    /* Make the container fully responsive */
+    .Box {
+      width: 100%;
+      flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
+      margin: auto;
+    }
+  
+    /* Adjust image sizes and layout for smaller screens */
+    .BoxPic{
+      margin: auto;
+    }
+    #BoxPic {
+      width: 100%; /* Make images scale to container width */
+      height: auto; /* Maintain aspect ratio */
+      
+    }
+  
+    .BoxPic1 {
+      width: 100%; /* Responsive width */
+      font-size: 18px; /* Adjust font size for better readability */
+    }
+  
+    .BoxPic1 h1 {
+      margin-bottom: 20px; /* Adjust margin for smaller screens */
+    }
+    .BoxPic1 p {
+        font-size: 0.1 rem;
+        font-weight: 500;
+      }
+  }
+  

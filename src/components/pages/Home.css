@@ -1,0 +1,111 @@
+.containerH {
+    background-color: rgb(20, 23, 83);
+    display: flex;
+    height: 100vh;
+    color: white;
+    padding-top: 80px;
+}
+
+.leftcontent {
+    background-color: rgb(20, 23, 83);
+    margin-left: 50px;
+    margin-top: 30px;
+    width: 50%;
+    background-size: cover;
+    background-image: url(/public/pictures/HeaderImage.png);
+    width: 630px;
+    height: 640px;
+    background-repeat: no-repeat;
+}
+
+.rightcontent {
+    width: 50%;
+    margin-top: 150px;
+    margin-left: 100px;
+
+}
+
+.rightcontent h1 .H {
+    font-size: 48px;
+    font-weight: bolder;
+    padding-top: 15px;
+}
+
+.rightcontent h2 {
+    font-size: 24px;
+    padding-top: 10px;
+}
+
+#signbtn {
+    margin-left: 50px;
+    margin-top: 30px;
+    color: black;
+    font-size: xx-large;
+    font-weight: bold;
+    background-color: rgb(141, 172, 207);
+    height: 80px;
+    width: 350px;
+    border-radius: 40px;
+}
+
+.picture {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .containerH {
+        flex-direction: column;
+        /* Stack items vertically */
+        flex-wrap: wrap;
+        height: 89vh;
+
+    }
+
+    .leftcontent,
+    .rightcontent {
+        width: 100%;
+        margin: 0;
+        padding-top: 20px;
+        background-image: none;
+    }
+
+    .leftcontent {
+        height: auto;
+    }
+
+    .picture {
+        background-image: none;
+        max-width: 40%;
+        border-radius: 0;
+        margin-top: 0;
+
+    }
+
+    .rightcontent h1 {
+        font-size: 24px;
+        /* Adjusted font size for smaller screens */
+    }
+
+    .rightcontent h2 {
+        font-size: 16px;
+        /* Adjusted font size for smaller screens */
+    }
+
+    #signbtn {
+        font-size: medium;
+        /* Adjusted font size for smaller screens */
+        height: 50px;
+        /* Adjusted height for smaller screens */
+        border-radius: 15px;
+        /* Adjusted border radius for smaller screens */
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .picture {
+        max-width: 600px;
+        /* Adjusted maximum width for extra-large screens */
+        margin-top: 150px;
+        /* Adjusted margin for extra-large screens */
+    }
+}

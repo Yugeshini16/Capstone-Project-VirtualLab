@@ -1,0 +1,23 @@
+.footerl {
+    height: 420px;
+    width: 100%;
+    background-color: rgb(20, 23, 83);
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.fcontent h1{
+    font-size: 30px;
+    margin-top: 30px
+}
+.fcontent p{
+    margin-top: 20px;
+    padding: 10px;
+}
+.socialmedia ul {
+    display: flex;
+}
+.socialmedia ul li{
+    margin: auto;
+}
