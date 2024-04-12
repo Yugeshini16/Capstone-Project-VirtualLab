@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
+import {Link} from 'react-router-dom'
 import './NavBar.css';
 
 function NavBar() {
@@ -26,11 +27,10 @@ function NavBar() {
 
       <div className="nav-links">
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a className="" href="/Subjects">Subjects</a></li>
-          <li><a href="/SignUp">SignUp</a></li>
-          <li><a className="Login" href="/Login">Login</a></li>
-          <li><a href='/Dashboard'><FontAwesomeIcon icon={faUser} /></a></li>
+          <Link to='/' className='link' style={{textDecoration:'none'}}><li>Home</li></Link>
+          <Link to='/Subjects' className='link' style={{textDecoration:'none'}}><li>Subjects</li></Link>
+          <Link to='/login' className='link'style={{textDecoration:'none'}}><li>SignIn</li></Link>
+          <li><a href='/Dashboard' className='link'style={{textDecoration:'none'}}><FontAwesomeIcon icon={faUser} /></a></li>
         </ul>
       </div>
     </div>

@@ -8,6 +8,7 @@
     width: 100%;
     position: fixed;
     transition: transform 0.5s ease;
+    z-index: 999;
   }
 
   .logoImg {
@@ -18,31 +19,30 @@
   .nav-links {
     height: 80px;
     width: 100%;
-    padding: 10px 0 0 300px;
+    padding: 10px 0px 0 300px;
   }
 
   .nav-links ul {
     list-style: none;
     display: flex;
     justify-content: space-between;
+    text-align: center;
+    
   }
 
-  .nav-links ul li {
-    color: aliceblue;
-    padding-right: 55px;
-  }
-
-  .nav-links ul li a {
+  .nav-links ul .link li  {
     font-weight: 400;
     color: rgb(234, 235, 236);
     text-decoration: none;
     font-size: 23px;
     font-family: 'poppins';
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
-  .nav-links ul li a:hover {
-    border-bottom: 1px solid #fff;
-    text-shadow: 1px 0 #fff;
+  .nav-links ul .link li:hover {
+    border-bottom: 2px solid #fff;
   }
 
   .Login {
