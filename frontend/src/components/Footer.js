@@ -9,11 +9,13 @@ function Footer() {
         <div className="footerl">
             <div className="fcontent">
                 <div className="footcontent">
-                    <p>... ........................................................</p>
-                    <p>... ........................................................</p>
-                    <p>... ........................................................</p>
-                    <p>... ........................................................</p>
-                    <p>... ........................................................</p>
+                
+                    <p>Hey Champ!</p>
+                    <p>Dive into interactive experiments,</p>
+                    <p>test your knowledge with quizzes,</p>
+                    <p>receive personalized feedback,</p>
+                    <p>and explore the endless possibilities of our virtual lab.</p>
+                    <p>Join us on this exciting journey of discovery and learning.</p>
                 </div>
                 <div className="socialmedia">
                     <ul>
