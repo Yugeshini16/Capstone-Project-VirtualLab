@@ -29,17 +29,17 @@ function Footer() {
 
 
             <div className="fcontent">
-                <h1>Support</h1>
+                <h2>Support</h2>
                 <p>Help</p>
                 <p>Review</p>
             </div>
             <div className="fcontent">
-                <h1>Support</h1>
+                <h2>Support</h2>
                 <p>Help</p>
                 <p>Review</p>
             </div>
             <div className="fcontent">
-                <h1>Support</h1>
+                <h2>Support</h2>
                 <p>Help</p>
                 <p>Review</p>
                 <p>Review</p>

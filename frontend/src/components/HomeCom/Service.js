@@ -7,7 +7,7 @@ function Service() {
         <>
         <div className="containerW">
             <div className="whead">
-                <h1>Why you want to choose us?</h1>
+                <h2>Why you want to choose us?</h2>
                 <div className="un"></div>
             </div>
 
