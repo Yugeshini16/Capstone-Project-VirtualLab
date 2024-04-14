@@ -12,7 +12,7 @@ function Home() {
             <div className="containerH">
                 <div className="leftcontent">
                     <div className="picture">
-                        <img src="/public/pictures/HeaderImage.png" alt="" />
+                        <img src="/public/pictures/HeaderImage.png" alt="Children doing experiments" />
                     </div>
                 </div>
                 <div className="rightcontent">

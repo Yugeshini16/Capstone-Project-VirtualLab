@@ -9,9 +9,8 @@ function Footer() {
         <div className="footerl">
             <div className="fcontent">
                 <div className="footcontent">
-                
-                    <p>Hey Champ!</p>
-                    <p>Dive into interactive experiments,</p>
+                    
+                    <p>Hey Champ!Dive into interactive experiments,</p>
                     <p>test your knowledge with quizzes,</p>
                     <p>receive personalized feedback,</p>
                     <p>and explore the endless possibilities of our virtual lab.</p>
@@ -35,12 +34,12 @@ function Footer() {
                 <p>Review</p>
             </div>
             <div className="fcontent">
-            <h1>Support</h1>
+                <h1>Support</h1>
                 <p>Help</p>
                 <p>Review</p>
             </div>
             <div className="fcontent">
-            <h1>Support</h1>
+                <h1>Support</h1>
                 <p>Help</p>
                 <p>Review</p>
                 <p>Review</p>
