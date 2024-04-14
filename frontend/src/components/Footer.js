@@ -10,14 +10,16 @@ function Footer() {
             <div className="fcontent">
                 <div className="footcontent">
                     
-                    <p>Hey Champ!Dive into interactive experiments,</p>
-                    <p>test your knowledge with quizzes,</p>
-                    <p>receive personalized feedback,</p>
-                    <p>and explore the endless possibilities of our virtual lab.</p>
-                    <p>Join us on this exciting journey of discovery and learning.</p>
+                    <h2>Here's a message from us!</h2>
+                    <p>Hey Champ!
+                    <br/>Dive into interactive experiments,
+                    <br/>test your knowledge with quizzes,
+                    <br/>receive personalized feedback,
+                    <br/>and explore the endless possibilities of our virtual lab.
+                    <br/>Join us on this exciting journey of discovery and learning.</p>
                 </div>
                 <div className="socialmedia">
-                    <ul>
+                    <ul type="">
                         <li><FontAwesomeIcon icon={faFacebook} className=' text-3xl' /></li>
                         <li><FontAwesomeIcon icon={faTwitter}  className=' text-3xl' /></li>
                         <li><FontAwesomeIcon icon={faInstagram}  className=' text-3xl'/></li>
