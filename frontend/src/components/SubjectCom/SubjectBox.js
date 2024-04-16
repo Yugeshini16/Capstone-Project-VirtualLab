@@ -5,9 +5,9 @@ function SubjectBox() {
         <div className="SubjectBox">
             <a href='/practical'>
             <div className="SubjectPic">
-                <img src="pictures/Subpic.png" id="image-cover" />
+                <img src="pictures/SubjectNavi_Biology.jpg" id="image-cover" />
             </div>
-            <h1> Biology</h1>
+            <h2> Biology </h2>
             </a>
         </div>
         </>

@@ -5,7 +5,7 @@ function SubjectBox2() {
         <div className="SubjectBox">
 
             <div className="SubjectPic">
-                <img src="pictures/Subpic.png" id="image-cover" />
+                <img src="pictures/SubjectNavi_Physics.jpeg" id="image-cover" />
             </div>
             
             <h2>Physics</h2>
