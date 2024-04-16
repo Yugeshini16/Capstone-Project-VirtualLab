@@ -4,40 +4,59 @@ import Button from 'react-bootstrap/Button';
 
 
 function CreateAccountForm() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [Username, setUserName] = useState("");
   const [email, setEmail] = useState("");
-  const [stream, setStream] = useState("");
+  const [Stream, setStream] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
     // Form validation logic here
     if (password !== confirmPassword) {
       alert("Passwords do not match");
       return;
     }
-
-    // Submit the form data to the backend here
-    console.log({
-      firstName,
-      lastName,
-      email,
-      stream,
-      password,
-    });
-
-    // Clear the form after successful submission
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setStream("");
-    setPassword("");
-    setConfirmPassword("");
+  
+    // Constructing FormData object
+    const formData = new FormData();
+    formData.append('username', Username);
+    formData.append('email', email);
+    formData.append('password', password);
+    formData.append('Stream', Stream);
+    
+// Iterate over FormData entries using forEach
+formData.forEach((value, key) => {
+    console.log(`${key}: ${value}`);
+  });
+  
+  // Or, iterate over FormData entries using a for...of loop
+  for (const entry of formData.entries()) {
+    console.log(`${entry[0]}: ${entry[1]}`);
+  }
+    
+    // Sending the form data to the backend
+    try {
+        const res = await fetch('http://localhost:3001/api/auth/signup', {
+            method: 'POST',
+            body: JSON.stringify(formData),
+          
+      });
+      const data = await res.json();
+      console.log(data);
+      
+      // Clear the form after successful submission
+      setUserName("");
+      setEmail("");
+      setStream("");
+      setPassword("");
+      setConfirmPassword("");
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
-
+  
   return (
     <>
     <div className="containerSign">
@@ -53,21 +72,11 @@ function CreateAccountForm() {
                 <input
                     type="text"
                     id="firstName"
-                    name="firstName"
-                    placeholder="First name"
-                    value={firstName}
-                    onChange={(event) => setFirstName(event.target.value)}
+                    name="username"
+                    placeholder="Username"
+                    value={Username}
+                    onChange={(event) => setUserName(event.target.value)}
                     required
-                />
-            </div>
-            <div className="form-group">
-                <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    placeholder="Last name"
-                    value={lastName}
-                    onChange={(event) => setLastName(event.target.value)}
                 />
             </div>
             <div className="form-group">
@@ -85,9 +94,9 @@ function CreateAccountForm() {
                 <input
                     type="text"
                     id="stream"
-                    name="stream"
+                    name="Stream"
                     placeholder="Stream"
-                    value={stream}
+                    value={Stream}
                     onChange={(event) => setStream(event.target.value)}
                 />
             </div>
