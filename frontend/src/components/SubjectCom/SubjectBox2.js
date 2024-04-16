@@ -3,10 +3,12 @@ function SubjectBox2() {
     return ( 
         <>
         <div className="SubjectBox">
+
             <div className="SubjectPic">
                 <img src="pictures/Subpic.png" id="image-cover" />
             </div>
-            <h1>Physics</h1>
+            
+            <h2>Physics</h2>
 
         </div>
         </>
