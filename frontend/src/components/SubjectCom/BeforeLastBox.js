@@ -4,10 +4,10 @@ function BeforeLastBox() {
     <>
     <div className="Box">
         <div className="BoxPic">
-            <img src="pictures/BoxPic.png" id="BoxPic" />
+            <img src="pictures/BoxPic.png" id="BoxPict" />
         </div>
         <div className="BoxPic1">
-            <h1> Sharpen your scientific skills through hands-on experiments!</h1> 
+            <h3> Sharpen your scientific skills through hands-on experiments!</h3> 
 
                 <p>Here, you'll find interactive lab  simulations, virtual experiments,</p>
                 <p>and downloadable resources to guide  you through real-world </p>

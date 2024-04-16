@@ -12,7 +12,7 @@
     background-color: rgb(158, 158, 189);
 
 }
-#BoxPic{
+#BoxPict{
     width: 415px;
     height: 376px;
 
@@ -28,8 +28,8 @@
     font-weight: bold;
     padding: 89px;
 }
-.BoxPic1 h1{
-    margin-bottom: 23px;
+.BoxPic1 h3{
+    margin-bottom: 20px;
     font-weight: 700;
     font-size: 20px;
 }
@@ -65,7 +65,7 @@
       font-size: 18px; /* Adjust font size for better readability */
     }
   
-    .BoxPic1 h1 {
+    .BoxPic1 h2 {
       margin-bottom: 20px; /* Adjust margin for smaller screens */
     }
     .BoxPic1 p {
