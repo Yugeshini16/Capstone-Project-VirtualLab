@@ -10,12 +10,11 @@
     height: 376px;
     width: 415px;
     background-color: rgb(158, 158, 189);
-
 }
+
 #BoxPict{
     width: 415px;
     height: 376px;
-
 }
 
 .BoxPic1 {
@@ -28,18 +27,19 @@
     font-weight: bold;
     padding: 89px;
 }
+
 .BoxPic1 h3{
     margin-bottom: 20px;
     font-weight: 700;
     font-size: 20px;
 }
+
 .BoxPic1 p{
     padding:1px auto;
     font-size: 20px;
     font-weight: 600;
-
-
 }
+
 /* Use media queries to adjust styles for different screen sizes */
 @media only screen and (max-width: 768px) {
 
