@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import './Form.css';
 import Button from 'react-bootstrap/Button';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { First } from 'react-bootstrap/esm/PageItem';
+import { signInStart,signInSuccess, signInFailure } from '../../redux/user/userSlice';
+import {useSelector, useDispatch} from 'react-redux';
 
 function CreateAccountForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const navigate = useNavigate(); // Move useNavigate hook outside of the handleSubmit function
+  const {loading, error} = useSelector ((state) => state.user);
+  const navigate = useNavigate(); 
+  const dispatch = useDispatch();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,7 +22,7 @@ function CreateAccountForm() {
     };
   
     try {
-      setLoading(true);
+      dispatch(signInStart());
       const res = await fetch("http://localhost:3001/api/auth/signin", {
         method: "POST",
         headers: {
@@ -31,19 +33,17 @@ function CreateAccountForm() {
   
       const data = await res.json();
       console.log(data);
-      setLoading(false);
       if (data.success === false) {
-        setError(true);
+        dispatch(signInFailure(data));
         return;
       }
-  
+      dispatch(signInSuccess(data));
+
       setEmail("");
       setPassword("");
       navigate('/Dashboard'); // Use navigate function to navigate to the desired route
     } catch (error) {
-      setLoading(false);
-      setError(true);
-      console.error("Error submitting form:", error);
+      dispatch(signInFailure(error));
     }
   };
   
@@ -86,7 +86,8 @@ function CreateAccountForm() {
             Don't have an account? <Link to='/SignUp'>Sign Up</Link>
           </p>
         </div>
-        <p>{error && 'Something went wrong'}</p>
+        <p>
+          {error ? error.message || 'Something went wrong' : ''}</p>
       </div>
     </>
   );
