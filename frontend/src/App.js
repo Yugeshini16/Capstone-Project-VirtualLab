@@ -13,6 +13,7 @@ import PracticalSteps from './components/pages/PracticalSteps';
 import Quiz from './components/pages/quiz';
 import Review from './components/pages/review';
 import { PersistGate } from 'redux-persist/integration/react';
+import PrivateRoute from './components/PrivateRoute.js';
 
 function App() {
   return (
@@ -23,7 +24,9 @@ function App() {
             <Routes>
               <Route path='/' exact element={<Home />} />
               <Route path='/SignUp' exact element={<SignUp />} />
-              <Route path='/Dashboard' exact element={<Dashboard />} />
+              <Route element = {<PrivateRoute/>}>
+                   <Route path='/Dashboard' exact element={<Dashboard />} />
+              </Route>
               <Route path='/Subjects' exact element={<SubjectNavigation />} />
               <Route path='/Login' exact element={<Login />} />
               <Route path='/practical' exact element={<PracticalNav />} />
