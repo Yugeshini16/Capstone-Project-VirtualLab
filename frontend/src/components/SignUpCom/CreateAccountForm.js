@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./CreateAccountForm.css";
 import Button from "react-bootstrap/Button";
+import { Link, Navigate, useNavigate } from 'react-router-dom';
+
 
 function CreateAccountForm() {
   const [Username, setUserName] = useState("");
@@ -13,6 +15,8 @@ function CreateAccountForm() {
   //set loading 
   const[error, setError]= useState(null);
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate(); // Move useNavigate hook outside of the handleSubmit function
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -44,7 +48,7 @@ function CreateAccountForm() {
       const data = await res.json();
       console.log(data);
       setLoading(false);
-      if(data.success==false){
+      if(data.success===false){
         setError(true);
         return;
       }
@@ -57,6 +61,8 @@ function CreateAccountForm() {
       setPassword("");
       setConfirmPassword("");
       setFormData({}); // Clear form data state as well
+      navigate('/login'); // Use navigate function to navigate to the desired route
+
     } catch (error) {
       setLoading(false);
       setError(true);
@@ -71,7 +77,7 @@ function CreateAccountForm() {
         <div className="header">
           <a href="/">
             {" "}
-            <img src="pictures/VirtualLab Logo.png"></img>
+            <img src="pictures/VirtualLab Logo.png" alt='logo'></img>
           </a>
         </div>
 
@@ -135,7 +141,7 @@ function CreateAccountForm() {
             <Button disabled={loading} id="getnbtn" as="input" type="submit" value={loading ? 'loading': 'Sign Up'} />
           </form>
           <p id="last">
-            Already have an account? <a href="/login">Log in</a>
+            Already have an account? <Link to="/login">Sign In</Link>
           </p>
         </div>
         <p >{error && 'Something went wrong'}</p>
