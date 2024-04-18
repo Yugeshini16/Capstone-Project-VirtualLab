@@ -1,5 +1,6 @@
 import './DashboardLeftSide.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Link} from 'react-router-dom';
 function DashboardLeftSide() {
     return ( 
         <>
@@ -25,7 +26,7 @@ function DashboardLeftSide() {
       <div className="menu--list">
         <a href="#" className='item'>
           <img src="/pictures/Profile_Icon.svg"></img>
-          Profile
+          <Link to='/profile'>profile</Link> 
         </a>
 
         <a href="#" className='item'>

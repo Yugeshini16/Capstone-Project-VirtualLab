@@ -1,11 +1,16 @@
 import './Topbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faMagnifyingGlass ,faEnvelopeOpen ,faBell} from '@fortawesome/free-solid-svg-icons';
+import {useSelector} from 'react-redux';
+
 
 const images = [ 'pictures/pp.png'
 ];
 function Topbar() {
+    const {currentUser } = useSelector((state) => state.user);
+
     return (
+
         <>
          <div className='content--header'>
         
@@ -24,8 +29,7 @@ function Topbar() {
             {images.length > 0 && <img src={images[0]} className="profile-pic" />}
             </div>
             <div className='nameofuser'>
-            <li>Yugeshini</li>
-            <li>Muththukumar</li>
+            <li>{currentUser.username}</li>
               </div>    
             </div>
         </div>   </div>
