@@ -3,6 +3,7 @@
     height: 275px;
     background-color: rgb(20, 23, 83);
     border-radius: 20px;
+    
 }
 
 .SubjectPic {
@@ -15,6 +16,7 @@
     overflow: hidden;
     background-position: center center;
     padding: 10px;
+    
 }
 
 .SubjectBox h2 {
@@ -23,7 +25,8 @@
     padding-top: 15px;
     font-size: 30px;
     font-weight: bold;
-    color: #fff;
+    color: #69dae2;
+    
 }
 
 #image-cover {
@@ -44,4 +47,9 @@
         width: calc(100% - 0px);
     }
 
+}
+
+.SubjectBox Link:hover{
+    transition: ease-in-out 1.3s;
+    letter-spacing: 0.2em;
 }
