@@ -16,7 +16,7 @@
     overflow: hidden;
     background-position: center center;
     padding: 10px;
-    
+    transition: 0.5s;
 }
 
 .SubjectBox h2 {
@@ -49,7 +49,9 @@
 
 }
 
-.SubjectBox Link:hover{
-    transition: ease-in-out 1.3s;
-    letter-spacing: 0.2em;
+.SubjectBox .link:hover{
+    background: rgb(28, 123, 207);
+    letter-spacing: 0.23em;
+    box-shadow: 0 0 35px rgb(44, 141, 226);
+
 }
