@@ -18,7 +18,7 @@ function TheoryContent(){
                 Uses of dimensions. Testing the correctness of a physical equation Finding the units of a given quantity
                 Deriving expressions Student will be able to understand the topic clearly.</p>
 
-            <img src="pictures/02.png" alt="content of practical"></img>
+            <img src="pictures/PracticalContent_PracTheoryPage.jpg" alt="content of practical"></img>
             
             <h3>Equipments</h3>
             <ul>

@@ -6,7 +6,8 @@ function Steps(props){
 return (
     <>
     <div className="Step">
-    <FormControlLabel control = {<Checkbox />} /> 
+
+        <span className='checkbox'><FormControlLabel control = {<Checkbox />} /></span>
         <h4>{props.text}</h4>
     </div>
     </>
