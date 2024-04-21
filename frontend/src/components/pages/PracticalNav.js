@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../../App.css';
 import SlideShow from '../PracticalNavCom/SlideShow';
 import PracticalItem from '../PracticalNavCom/PractiaclItem';
 import PopPract from '../PracticalNavCom/PopPract';
