@@ -1,8 +1,7 @@
 .title1{
+    margin-top: 20px;
     background-color: #151854;
     height: 80px;
-    margin-top: -42px;
-    
 }
 
 .heading1{
@@ -11,21 +10,21 @@
     text-align: center;
     text-justify: distribute-all-lines;
     margin-top: 15px;
-    
+    font-size: 50px;
 }
 
 .hr1{
-    width: 5%;
-    font-weight: 100;
+    width: 25%;
+    height: 50px;
     color: #FFFFFF;
     margin-top: 10px;
-    margin-left: 650px;
+    margin-left: 550px;
 }
 
 .container{
-    width: 600px;
+    width: 700px;
     margin: auto;
-    margin-top: 15px;
+    margin-top: 25px;
     background: #babeff7c;
     color: #000000;
     display: flex;
@@ -36,15 +35,16 @@
     font-family: Calibri (Body);
 }
 
-.container h5{
+.container h3{
     color: #000000ce;
-    font-weight: 250;
+    font-weight: 550;
     margin-top: 5px;
     margin-left: 15px;
+    font-size: 50px;
 }
 
 .container hr{
-    height: 1px;
+    height: 7px;
     border: none;
     background: #00000052;
 }
