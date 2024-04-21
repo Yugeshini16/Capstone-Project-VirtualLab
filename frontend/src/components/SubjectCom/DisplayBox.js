@@ -55,7 +55,7 @@ function DisplayBox() {
           <FontAwesomeIcon icon={faCircleNotch} className="loading" />
         </div>
       )}
-      <div className="dot-container">
+      <div className="dot-container-SubjectNav">
         <ul>
           {circleColors.map((color, index) => (
             <li key={index}>

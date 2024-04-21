@@ -26,14 +26,12 @@ function PracticalNav(){
             input={collection}
             ratio={'3:2'}
             mode={'automatic'}
-            timeout={'3000'} />
+            timeout={'3000'} 
+        />
 
         <PracticalItem/>
         <PopPract/>
-        </>
-
-        
-       
+        </>  
     );
 }
 
