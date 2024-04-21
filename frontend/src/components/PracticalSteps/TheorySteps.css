@@ -1,15 +1,18 @@
 .contentClm{
     display: flex;
     flex-direction: row;
-  margin: 50px 250px 50px 250px;
+    margin: 50px 250px 50px 250px;
     width: 1440px;
 }
+
 .contentClm img{
     width: 570px;
     height: 700px;
     object-fit: cover;
-justify-items: center;
-vertical-align: middle;}
+    justify-items: center;
+    vertical-align: middle;
+}
+
 .Step{
     width:300px;
     height: 40px;
@@ -23,8 +26,12 @@ vertical-align: middle;}
 
 }
 .Step h4{
-    font-size: 20px;
+    font-size: 1px;
     font-family: 'poppins';
     font-weight: 600;
     width: 500px;
+}
+
+.stepCLm {
+    align-content: center;
 }
