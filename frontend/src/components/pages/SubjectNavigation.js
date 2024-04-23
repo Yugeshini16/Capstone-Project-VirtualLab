@@ -1,3 +1,4 @@
+import NavBar from '../NavBar';
 import BeforeLastBox from '../SubjectCom/BeforeLastBox';
 import DisplayBoX from '../SubjectCom/DisplayBox';
 import LastBox from '../SubjectCom/LastBox';
@@ -5,12 +6,14 @@ import SubjectBox from '../SubjectCom/SubjectBox';
 import SubjectBox1 from '../SubjectCom/SubjectBox1';
 import SubjectBox2 from '../SubjectCom/SubjectBox2';
 import './SubjectNavigation.css';
-import NavBar from '../NavBar';
+
 
 function SubjectNavigation() {
     return ( 
         <>
-        <NavBar/>
+        <div className='nav'> 
+            <NavBar/>
+        </div>   
         <div className="subNavContainer">  
         
             <div className="SecondSec">

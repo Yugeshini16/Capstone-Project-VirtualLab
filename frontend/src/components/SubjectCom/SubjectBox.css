@@ -1,9 +1,26 @@
+.SubjectBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+
 .SubjectBox {
+    
     width: 230px;
     height: 275px;
     background-color: rgb(20, 23, 83);
     border-radius: 20px;
-    
+    box-shadow: 0 0 20px 2px rgba(0,0,0,0.4);
+    transition: 1s;
+}
+
+
+
+.SubjectBox:hover{
+    transform: scale(1.15);
+    z-index: 2;
 }
 
 .SubjectPic {
@@ -34,6 +51,23 @@
     height: 205px;
 }
 
+/*@media screen and (max-width:1000px) {
+    .SubjectBox{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:620px) {
+
+    .subNavContainer{
+        width: 100%;
+    }
+
+    .SubjectBox{
+        width: 80%;
+    }
+}
+*/
 @media (max-width: 768px) {
 
     .SubjectBox,
@@ -50,8 +84,6 @@
 }
 
 .SubjectBox .link:hover{
-    background: rgb(28, 123, 207);
     letter-spacing: 0.23em;
-    box-shadow: 0 0 35px rgb(44, 141, 226);
-
+    transition: ease 1.3s;
 }
