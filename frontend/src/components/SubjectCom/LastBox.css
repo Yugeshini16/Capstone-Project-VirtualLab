@@ -1,6 +1,6 @@
 .LastBox {
     width: 80%;
-    height: 245px;
+    height: 255px;
     background-color: rgb(250, 250, 250);
     border-width: 20px;
     border-style: solid;
@@ -11,10 +11,13 @@
     gap: 5px;
     justify-content: center;
     font-size: 22px;
-  
     padding: 51px;
   }
   
+  .LastBox:hover{
+      letter-spacing: 0.23em;
+      transition: ease-out 2s;
+  }
 
   .LastBox h3 {
     text-align: center;
