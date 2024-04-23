@@ -1,7 +1,10 @@
 .LastBox {
     width: 80%;
     height: 245px;
-    background-color: rgb(20, 23, 83);
+    background-color: rgb(250, 250, 250);
+    border-width: 20px;
+    border-style: solid;
+    border-image: linear-gradient(to top, rgb(20, 23, 83), #9fdde4 )1;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -12,15 +15,17 @@
     padding: 51px;
   }
   
+
   .LastBox h3 {
     text-align: center;
     font-weight: bold;
-    font-size: 21px;
-  
+    font-size: 25px;
+    color: black;
   }
   .LastBox p {
-    font-size: 21px;
+    font-size: 19px;
     padding-top: 5px;
+    color: black;
   }
   
   @media only screen and (max-width: 768px) {

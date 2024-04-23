@@ -20,7 +20,7 @@ function PopPract(){
                             </div>
 
                             <h3>Web Development</h3>
-                            <p className='para'>Now, it's time to come up with a great slogan to tie all the pieces together.</p>
+                            <p>Now, it's time to come up with a great slogan to tie all the pieces together.</p>
                             <button className='btnPlay'><FaPlay /></button>
                         </div>
 
