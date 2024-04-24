@@ -33,8 +33,9 @@ function SubjectNavigation() {
             <div className="LastSec">
                 <LastBox></LastBox>   
             </div>
-         
-        </div>
+        
+        </div> 
+    
 
          </>
         

@@ -4,7 +4,7 @@ function BeforeLastBox() {
     <>
     <div className="Box">
         <div className="BoxPic">
-            <img src="pictures/BoxPic.png" alt="SidePic" id="BoxPict" />
+            <img src="pictures/SubNav_BLBox.jpeg" alt="SidePic" id="BoxPict" />
         </div>
 
         <div className="BoxPic1">
