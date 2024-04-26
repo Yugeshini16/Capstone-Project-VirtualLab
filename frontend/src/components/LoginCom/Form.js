@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Form.css'
+import './Form.css';
 import Button from 'react-bootstrap/Button';
 import { First } from 'react-bootstrap/esm/PageItem';
 
@@ -38,7 +38,8 @@ function CreateAccountForm() {
     <div className="containerSign">
         
         <div className="header">
-            <img src=''></img> 
+            <img src='favicon.ico'></img> 
+            <h2> Virtual Lab for A/L Students</h2>
         </div>    
         
         <div className="create-account-form">
