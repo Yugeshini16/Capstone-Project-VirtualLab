@@ -8,7 +8,8 @@ function SignRightSide() {
         <div className="rightside">
             <img src={Physics} id='rightside' />
             <h1>"Science is the pursuit of truth through observation and experiment."
-                    - Claude Bernard</h1>
+                    - Claude Bernard</h1> 
+                    {/* test1 */}
         </div>
         </>
      );
