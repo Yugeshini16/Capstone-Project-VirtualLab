@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
-import { useRef, useState } from 'react';
-
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {
   updateUserStart,
@@ -27,39 +26,48 @@ export default function Profile() {
     event.preventDefault();
     try {
       dispatch(updateUserStart());
+      console.log("updating user")
       const res = await fetch(`http://localhost:3001/api/user/update/${currentUser._id}`, {
-        method: 'POST',
+        method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-      if (data.success === false) {
-        dispatch(updateUserFailure(data));
-        return;
+      if (res.ok) {
+        console.log("success");
+        dispatch(updateUserSuccess(data.message));
+        setUpdateSuccess(true);
+      } else {
+        console.log("failure");
+        dispatch(updateUserFailure(data.message));
       }
-      dispatch(updateUserSuccess(data));
-      setUpdateSuccess(true);
     } catch (error) {
-      dispatch(updateUserFailure(error));
+      console.log("error");
     }
   };
 
   const handleDeleteAccount = async () => {
     try {
       dispatch(deleteUserStart());
+  
       const res = await fetch(`http://localhost:3001/api/user/delete/${currentUser._id}`, {
         method: 'DELETE',
       });
+  
+      if (!res.ok) {
+        throw new Error('Failed to delete user account'); // Throw an error if the request is not successful
+      }
+  
       const data = await res.json();
       if (data.success === false) {
         dispatch(deleteUserFailure(data));
-        return;
+      } else {
+        dispatch(deleteUserSuccess(data));
       }
-      dispatch(deleteUserSuccess(data));
     } catch (error) {
-      dispatch(deleteUserFailure(error));
+      dispatch(deleteUserFailure(error.message)); // Dispatch the error message as failure action payload
     }
   };
 
@@ -71,16 +79,15 @@ export default function Profile() {
       console.log(error);
     }
   };
+
   return (
     <div className='p-3 max-w-lg mx-auto'>
       <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
       <img
-          src={formData.profilePicture || currentUser.profilePicture}
-          alt='profile'
-        />
+        src={formData.profilePicture || currentUser.profilePicture}
+        alt='profile'
+      />
       <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
-        
-        
         <input
           defaultValue={currentUser.username}
           type='text'
