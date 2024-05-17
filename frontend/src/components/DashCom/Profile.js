@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import {
   updateUserStart,
@@ -15,9 +15,15 @@ export default function Profile() {
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({});
   const [updateSuccess, setUpdateSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [isPasswordEntered, setIsPasswordEntered] = useState(false);
 
   const { currentUser, loading, error } = useSelector((state) => state.user);
- 
+
+  useEffect(() => {
+    setIsPasswordEntered(!!formData.password);
+  }, [formData.password]);
+
   const handleChange = (event) => {
     setFormData({ ...formData, [event.target.id]: event.target.value });
   };
@@ -26,55 +32,77 @@ export default function Profile() {
     event.preventDefault();
     try {
       dispatch(updateUserStart());
-      console.log("updating user")
       const res = await fetch(`http://localhost:3001/api/user/update/${currentUser._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${currentUser.token}`, // Assuming token-based authentication
         },
         body: JSON.stringify(formData),
       });
+
+      if (res.status === 401) {
+        // Handle unauthorized error, likely due to session expiration
+        dispatch(signOut());
+        setErrorMessage("Session expired. Please log in again.");
+        return;
+      }
+
       const data = await res.json();
       if (res.ok) {
-        console.log("success");
         dispatch(updateUserSuccess(data.message));
         setUpdateSuccess(true);
+        setErrorMessage(''); // Clear any previous error message
       } else {
-        console.log("failure");
         dispatch(updateUserFailure(data.message));
+        setUpdateSuccess(false);
+        setErrorMessage(data.message || 'Update failed.');
       }
     } catch (error) {
-      console.log("error");
+      dispatch(updateUserFailure("An unexpected error occurred."));
+      setUpdateSuccess(false);
+      setErrorMessage("An unexpected error occurred.");
     }
   };
 
   const handleDeleteAccount = async () => {
     try {
       dispatch(deleteUserStart());
-  
+
       const res = await fetch(`http://localhost:3001/api/user/delete/${currentUser._id}`, {
         method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${currentUser.token}`, // Assuming token-based authentication
+        },
       });
-  
+
       if (!res.ok) {
-        throw new Error('Failed to delete user account'); // Throw an error if the request is not successful
+        throw new Error('Failed to delete user account');
       }
-  
+
       const data = await res.json();
       if (data.success === false) {
         dispatch(deleteUserFailure(data));
+        setErrorMessage(data.message || 'Delete failed.');
       } else {
         dispatch(deleteUserSuccess(data));
+        setUpdateSuccess(false); // Clear the update success message on account deletion
+        setErrorMessage('');
       }
     } catch (error) {
-      dispatch(deleteUserFailure(error.message)); // Dispatch the error message as failure action payload
+      dispatch(deleteUserFailure(error.message));
+      setErrorMessage(error.message);
     }
   };
 
   const handleSignOut = async () => {
     try {
-      await fetch('http://localhost:3001/api/auth/signout');
-      dispatch(signOut())
+      await fetch('http://localhost:3001/api/auth/signout', {
+        headers: {
+          'Authorization': `Bearer ${currentUser.token}`, // Assuming token-based authentication
+        },
+      });
+      dispatch(signOut());
     } catch (error) {
       console.log(error);
     }
@@ -108,10 +136,12 @@ export default function Profile() {
           placeholder='Password'
           onChange={handleChange}
         />
-        <button >
+        <button type='submit' disabled={!isPasswordEntered}>
           {loading ? 'Loading...' : 'Update'}
         </button>
       </form>
+      {updateSuccess && <p className='text-green-700 mt-5'>User updated successfully!</p>}
+      {errorMessage && <p className='text-red-700 mt-5'>{errorMessage}</p>}
       <div className='flex justify-between mt-5'>
         <span
           onClick={handleDeleteAccount}
@@ -123,10 +153,6 @@ export default function Profile() {
           Sign out
         </span>
       </div>
-      <p className='text-red-700 mt-5'>{error && 'Something went wrong!'}</p>
-      <p className='text-green-700 mt-5'>
-        {updateSuccess && 'User is updated successfully!'}
-      </p>
     </div>
   );
 }
