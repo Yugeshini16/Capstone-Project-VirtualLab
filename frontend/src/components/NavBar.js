@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
-import {Link} from 'react-router-dom'; 
+import {Link} from 'react-router-dom';
 import './NavBar.css';
+import {useSelector} from 'react-redux';
 
 function NavBar() {
   const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
   const [isNavVisible, setIsNavVisible] = useState(true);
+  const {currentUser} = useSelector((state) => state.user);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,10 +29,19 @@ function NavBar() {
 
       <div className="nav-links">
         <ul>
-          <Link to='/' className='link' style={{textDecoration:'none'}}><li>Home</li></Link>
-          <Link to='/Subjects' className='link' style={{textDecoration:'none'}}><li>Subjects</li></Link>
-          <Link to='/login' className='link'style={{textDecoration:'none'}}><li>SignIn</li></Link>
-          <li><a href='/Dashboard' className='link'style={{textDecoration:'none'}}><FontAwesomeIcon icon={faUser} /></a></li>
+          <Link to='/' className='link' style={{textDecoration:'none'}}>
+            <li>Home</li>
+          </Link>
+          <Link to='/Subjects' className='link' style={{textDecoration:'none'}}>
+            <li>Subjects</li>
+          </Link>
+          <Link to='/Dashboard' className='link'style={{textDecoration:'none'}}>
+            {currentUser ? (
+              <img src={currentUser.profilePicture} alt="profile" />
+            ):(
+            <li>SignIn</li>
+          )}
+          </Link>
         </ul>
       </div>
     </div>
