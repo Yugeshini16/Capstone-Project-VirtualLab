@@ -5,9 +5,11 @@ import Physics from '../../assets/Physics.jpg';
 function SignRightSide() {
     return ( 
         <>
-        <div className="rightside">
+       <div className="rightside">
             <img src={Physics} id='rightside' />
-            <h1>"Science is the pursuit of truth through observation and experiment." <br/> -Claude Bernard</h1>
+            <h1>"Science is the pursuit of truth through observation and experiment."
+                    - Claude Bernard</h1> 
+                    {/* test1 */}
         </div>
         </>
      );
