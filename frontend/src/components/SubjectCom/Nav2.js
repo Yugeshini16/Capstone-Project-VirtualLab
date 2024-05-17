@@ -10,15 +10,16 @@ function Nav2() {
         
         <div className="nav-link">
           <ul>
-          <li><a href="/">Home</a></li>
-<li><a href="/About">About Us</a></li>
-<li><a href="/service">Service</a></li>
-<li><a href="/streams">Streams</a></li>
-<li><a href="/contact">Contact Us</a></li>
-<li><FontAwesomeIcon icon={faUser} /></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/About">About Us</a></li>
+            <li><a href="/service">Service</a></li>
+            <li><a href="/streams">Streams</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li><FontAwesomeIcon icon={faUser} /></li>
           </ul>
-          </div>
-          </div>
+        </div>
+        
+        </div>
         </>
      );
 }

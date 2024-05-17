@@ -9,21 +9,21 @@
   width: 100%;
   height: 100%;
   text-align: center;
-  background: linear-gradient(0deg, #fff 50%, var(--medium) 50%);
+  background: linear-gradient(0deg, #fcfcfc 50%, var(--medium) 50%);
 }
 
 .lp-slideshow  .container {
   width: 100%;
   height:620px !important;
   text-align: center;
-  height: 700px;
+  height: 600px;
 }
 
 .lp-slideshow > .container > .slide {
   width: 100%;
   position: absolute;
   opacity: 0;
-  transition: opacity 0.6s ease;
+  transition: opacity 0.7s ease;
   -webkit-transition: opacity 0.6s ease;
   -moz-transition: opacity 0.6s ease;
   -o-transition: opacity 0.6s ease;
@@ -45,7 +45,7 @@
   font-size: 36px;
   font-weight: 600;
   font-family: poppins;
-  padding: 10px 12px;
+  padding: 12px 12px;
   position: absolute;
   margin:-45px 0 0 400px  ;
   height: 50px;
@@ -93,13 +93,13 @@
 }
 
 .lp-slideshow > .dot-container {
-margin-right: 958px;
-margin-top: -10px;
+  margin-right: 958px;
+  margin-top: -10px;
 }
 
 .lp-slideshow > .dot-container > .dot {
-  height: 10px;
-  width: 30px;
+  height: 5px;
+  width: 50px;
   margin: 0.4rem;
   background-color: #ADB0EF;
   display: inline-block;

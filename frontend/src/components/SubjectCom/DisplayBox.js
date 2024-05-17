@@ -3,14 +3,14 @@ import './DisplayBox.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle, faCircleNotch } from '@fortawesome/free-solid-svg-icons';
 
-function DisplayBoX() {
+function DisplayBox() {
   const images = [
     
-    'pictures/DB2.jpg',
-    'pictures/DB.jpg',
-    'pictures/DB1.jpg',
-    'pictures/DB.jpg',
-    'pictures/DB1.jpg',
+    'pictures/SubjectNavi_slideshow01.jpg',
+    'pictures/SubjectNavi_slideshow02.jpg',
+    'pictures/SubjectNavi_slideshow03.jpg',
+    'pictures/SubjectNavi_slideshow04.jpg',
+    'pictures/SubjectNavi_slideshow05.jpg',
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -23,13 +23,13 @@ function DisplayBoX() {
         setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
         setIsLoading(false); 
       }, 1000); 
-    }, 6000); 
+    }, 3000); 
 
     return () => clearInterval(intervalId);
   }, []); 
 
   const [circleColors, setCircleColors] = useState(
-    new Array(5).fill('black')
+    new Array(5).fill('white')
   );
 
   useEffect(() => {
@@ -55,7 +55,7 @@ function DisplayBoX() {
           <FontAwesomeIcon icon={faCircleNotch} className="loading" />
         </div>
       )}
-      <div className="dot-container">
+      <div className="dot-container-SubjectNav">
         <ul>
           {circleColors.map((color, index) => (
             <li key={index}>
@@ -75,4 +75,4 @@ function DisplayBoX() {
   );
 }
 
-export default DisplayBoX;
+export default DisplayBox;

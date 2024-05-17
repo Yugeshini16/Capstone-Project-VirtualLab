@@ -6,14 +6,11 @@ function Login() {
     return ( 
         <>
         <div className="clmn">
-        <SignRightSide/>
-
-      <div className="contSign">
-
-            <Form/> 
-           
-       </div>
-       </div>
+          <SignRightSide/>
+            <div className="contSign">
+              <Form/> 
+            </div>
+        </div>
         </>
      );
 }

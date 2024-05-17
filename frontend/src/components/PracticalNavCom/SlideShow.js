@@ -27,21 +27,21 @@ export default class Slideshow extends React.Component {
     return newSlideIndex;
   };
 
-  // Quay về ảnh phía sau, tức index giảm 1 => step = -1
+ // Return to the next image, meaning the index decreases by 1 => step = -1
   backward = () => {
     this.setState({
       slideIndex: this.getNewSlideIndex(-1)
     });
   };
 
-  // Tiến tới ảnh phía trước, tức index tăng 1 => step = 1
+  // Move to the front image, meaning index increases by 1 => step = 
   forward = () => {
     this.setState({
       slideIndex: this.getNewSlideIndex(1)
     });
   };
 
-  // Xác định slideIndex nào sẽ được active
+  // Determine which slideIndex will be active
   setSlideIndex = index => {
     this.setState({
       slideIndex: index

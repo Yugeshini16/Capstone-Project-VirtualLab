@@ -1,5 +1,5 @@
 import './quiz.css';
-import reviw from './review'
+import Review from './review.js';
 import { data } from '../../assets/data';
 import React, { useRef, useState } from 'react';
 import { Col, Row } from 'antd';
@@ -67,12 +67,13 @@ function Quiz() {
         <>
             <div className='fulldiv'>
                 <div className='title1'>
-                    <h1 className='heading1'>Let’s Start Quiz</h1>
+                    <h2 className='heading1'>Let’s Start the Quiz</h2>
                     <hr className='hr1'></hr>
+                    
                 </div>
             </div>
             <div className='container'>
-                <h5>ALL THE BEST!</h5>
+                <h3>ALL THE BEST!</h3>
                 <hr />
                 {result ? (
                     <>
@@ -84,10 +85,10 @@ function Quiz() {
                                 <Col className='profpic' span={6}><img src="pictures/user.jpg" alt=""/></Col>
                                 <Col className='profdesc' span={12}>
                                     <Row>
-                                        <Col className='name' span={24}><h1>John Smith</h1></Col>
+                                        <Col className='name' span={24}><h5>John Smith</h5></Col>
                                     </Row>
                                     <Row>
-                                        <Col className='emal' span={24}><h3>johnSmith@gmail.com</h3></Col>
+                                        <Col className='emal' span={24}><h5>johnSmith@gmail.com</h5></Col>
                                     </Row>
                                     <Row>
                                         <Col className='f-resu' span={24}>
@@ -99,17 +100,18 @@ function Quiz() {
                             </Row>
                             <div className='f-result'>
                                 <Row>
-                                    <Col className='col' span={8}><h1>96</h1> <br/> <h4>Scored</h4></Col>
-                                    <Col className='col' span={8}><h1>78</h1> <br/> <h4>Percentage</h4></Col>
-                                    <Col className='col' span={8}><h1>8</h1> <br/> <h4>Rank</h4></Col>
+                                    <Col className='col' span={8}><h5>96</h5> <br/> <h4>Scored</h4></Col>
+                                    <Col className='col' span={8}><h5>78</h5> <br/> <h4>Percentage</h4></Col>
+                                    <Col className='col' span={8}><h5>8</h5> <br/> <h4>Rank</h4></Col>
                                 </Row>
                             </div>
                             <br/><br/>
+
                             <div className='buttons'>
                                 <button onClick={reset}>Reset</button> {' '}
-                              <a href='/Review'>  <Button>
-                                    Done 
-                                </Button></a>
+                                    <a href='/Review'> 
+                                        <Button> Done </Button>
+                                    </a>
                             </div>
                         </div>
                     </>

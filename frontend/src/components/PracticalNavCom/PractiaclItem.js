@@ -1,4 +1,5 @@
-import './PracticalItem.css'
+import './PracticalItem.css';
+import {Link} from 'react-router-dom';
 
 function PracticalItem() {
     return(
@@ -8,34 +9,41 @@ function PracticalItem() {
 
                 <div className='items'>
                     <div className='listDown'>
-                        <a href='/singlePratical'>
-                        <img src="pictures/01.jpg" alt="1st practical">
+                        
+                        <Link to='/singlePratical' className='link' style={{textDecoration:'none'}}>
+                            <img src="pictures/01.jpg" alt="1st practical">
 
-                        </img>
-                        <h4 className="head">
-                        Physical quantities without units
-                        </h4>
-                        <p className="info">
-                        Appreciates that all physical quantities consist of a numerical 
-                        magnitude with or without a unit. Uses the prefixes and their symbols 
-                        to indicate multiples and submultiples
-                        </p>
-                        <button  className='btn'>Learn More</button>
-                        </a>
+                            </img>
+
+                            <h4 className="head">
+                                Physical quantities without units
+                            </h4>
+
+                            <p className="info">
+                            Appreciates that all physical quantities consist of a numerical 
+                            magnitude with or without a unit. Uses the prefixes and their symbols 
+                            to indicate multiples and submultiples
+                            </p>
+
+                            <button  className='btn'>Learn More</button>
+                        </Link>
                     </div>
 
                     <div className='listDown dwn'>
                         <img src="pictures/01.jpg" alt="1st practical">
 
                         </img>
+
                         <h4 className="head ">
-                        Physical quantities without units
+                            Physical quantities without units
                         </h4>
+
                         <p className="info">
-                        Appreciates that all physical quantities consist of a numerical 
-                        magnitude with or without a unit. Uses the prefixes and their symbols 
-                        to indicate multiples and submultiples
+                            Appreciates that all physical quantities consist of a numerical 
+                            magnitude with or without a unit. Uses the prefixes and their symbols 
+                            to indicate multiples and submultiples
                         </p>
+
                         <button  className='btn'>Learn More</button>
                     </div>
 
@@ -43,31 +51,35 @@ function PracticalItem() {
                         <img src="pictures/01.jpg" alt="1st practical">
 
                         </img>
+
                         <h4 className="head">
-                        Physical quantities without units
+                            Physical quantities without units
                         </h4>
+
                         <p className="info">
-                        Appreciates that all physical quantities consist of a numerical 
-                        magnitude with or without a unit. Uses the prefixes and their symbols 
-                        to indicate multiples and submultiples
+                            Appreciates that all physical quantities consist of a numerical 
+                            magnitude with or without a unit. Uses the prefixes and their symbols 
+                            to indicate multiples and submultiples
                         </p>
+
                         <button  className='btn'>Learn More</button>
                     </div>
 
                     <div className='listDown'>
-                        <img src="pictures/01.jpg" alt="1st practical">
-
+                        <img src="pictures/01.jpg" alt="1st practical"> 
                         </img>
+
                         <h4 className="head">
-                        Physical quantities without units
+                            Physical quantities without units
                         </h4>
+
                         <p className="info">
-                        Appreciates that all physical quantities consist of a numerical 
-                        magnitude with or without a unit. Uses the prefixes and their symbols 
-                        to indicate multiples and submultiples
+                            Appreciates that all physical quantities consist of a numerical 
+                            magnitude with or without a unit. Uses the prefixes and their symbols 
+                            to indicate multiples and submultiples
                         </p>
+
                         <button  className='btn'>Learn More</button>
-                        
                     </div>
 
                 </div>

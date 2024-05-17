@@ -7,17 +7,33 @@
     color: white;
 }
 
-.fcontent h1{
+.fcontent h2{
     font-size: 30px;
-    margin-top: 30px
+    margin-top: 30px;
 }
 .fcontent p{
-    margin-top: 20px;
-    padding: 10px;
+    margin-top: 30px;
+    padding: 3px;
+    font-size: 15px;
 }
 .socialmedia ul {
     display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.socialmedia .text-3xl{
+    font-size: 32px;
 }
 .socialmedia ul li{
-    margin: auto;
+    margin: 0 10px;
+    padding: 25px;
+}
+
+.footcontent{
+    margin-top: 30px;
+    border: 2px solid;
+    padding: 10px;
+    border-radius: 20px;
+    margin-left: 2px;
 }

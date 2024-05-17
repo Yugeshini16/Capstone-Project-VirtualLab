@@ -13,7 +13,8 @@
     margin: auto;
     font-size: 1.4rem;
     padding-left:10PX ;
-}@media (max-width: 768px) {
+}
+@media (max-width: 768px) {
     .headingTitle p {
       font-size: 0.6rem; 
     }
