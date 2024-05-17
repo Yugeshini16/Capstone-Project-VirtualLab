@@ -8,7 +8,7 @@ function PracticalFooter(){
         <div className="footer">
             <div className="btns">
                 <button className="Widebtn">View Theory</button>
-                <a href="/quiz"><button className="playbtn"><FaPlay/> Start Quiz</button></a>
+                <a href="/quiz"><button className="playbtn"><FaPlay/>Start Quiz</button></a>
             </div>
         </div>
         </>

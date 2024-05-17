@@ -25,7 +25,7 @@ function NavBar() {
 
   return (
     <div className={`pic ${isNavVisible ? '' : 'nav-hidden'}`}>
-      <img src="/pictures/logo.png" className='logoImg'/>
+      <img src="/pictures/logo.svg" className='logoImg'/>
 
       <div className="nav-links">
         <ul>

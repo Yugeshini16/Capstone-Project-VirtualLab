@@ -1,26 +1,35 @@
 .LastBox {
     width: 80%;
-    height: 245px;
-    background-color: rgb(20, 23, 83);
+    height: 255px;
+    background-color: rgb(10, 8, 51);
+    border-width: 20px;
+    border-style: solid;
+    border-image: linear-gradient(to top, rgb(20, 23, 83), #9fdde4 )1;
     margin: auto;
     display: flex;
     flex-direction: column;
     gap: 5px;
     justify-content: center;
     font-size: 22px;
-  
     padding: 51px;
   }
   
-  .LastBox h1 {
+  .LastBox:hover{
+      letter-spacing: 0.23em;
+      transition: ease-out 2s;
+  }
+
+  .LastBox h3 {
     text-align: center;
     font-weight: bold;
-    font-size: 21px;
-  
+    font-size: 25px;
+    color: rgb(250, 248, 248);
+    
   }
   .LastBox p {
-    font-size: 21px;
+    font-size: 19px;
     padding-top: 5px;
+    color: rgb(251, 247, 247);
   }
   
   @media only screen and (max-width: 768px) {

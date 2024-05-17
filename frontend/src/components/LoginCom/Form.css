@@ -1,6 +1,7 @@
 .containerSign{
     margin-left: 20px;
     width: 660px;
+    max-height: 720px;
 }
 .header {
     height: 180px;
@@ -10,6 +11,19 @@
     align-items: center;
     width: 100%;
 }
+
+.header img{
+    height: 140px;
+
+}
+
+.header h2{
+    color: #fff;
+    text-transform: capitalize;
+    margin-left: 5px;
+    font-weight: 75;
+}
+
 .create-account-form {
     width: 100%;
     background-size: cover;
@@ -92,4 +106,8 @@
 
 p .Remember{
     left: 1138px;
+}
+
+input .checkbox{
+    left: 1200px;
 }

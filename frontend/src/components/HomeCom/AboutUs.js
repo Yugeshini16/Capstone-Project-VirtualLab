@@ -7,42 +7,50 @@ function About() {
         <>
         <div className="containerA">
             <div className="heade"></div>
+
             <div className="bigbox">
             
               <div className="minibox">
-                 <div className="partA">
-                 <img src='pictures/Flask_alt-1.svg' className='minipics'></img> 
-                
-                 </div>
+                <div className="partA">
+                   <img src='pictures/Flask_alt-1.svg' className='minipics'></img> 
+                </div>
+
                 <div className="partB">
                     <p>100+</p>
-                    <p>Practicles</p>
+                    <p>PRACTICALS</p>
                 </div>
               </div>
+
               <div className="minibox">
                 <div className="partA">
-                <img src='pictures/ai 1(1).svg' className='minipics'></img> 
+                  <img src='pictures/ai 1(1).svg' className='minipics'></img> 
                 </div>
+
                 <div className="partB">
                     <p>AI</p>
-                    <p >Assistance</p>
+                    <p >ASSISTANCE</p>
                 </div>
-            </div>
-            <div className="minibox">
-                <div className="partA">
-                <img src='/pictures/graduation-hat-02.svg' className='minipics'></img> 
+              </div>
 
+              <div className="minibox">
+
+                <div className="partA">
+                  <img src='/pictures/graduation-hat-02.svg' className='minipics'></img> 
                 </div>
+
                 <div className="partB">
-                    <p>Self</p>
-                    <p>Evaluation</p>
+                    <p>SELF</p>
+                    <p>EVALUATION</p>
                 </div>
+              </div>
+
             </div>
-            </div>
+
           <div className="AU">
-            <h1>About Us</h1>
+            <h2>About Us</h2>
             <div className="under"></div>
           </div>
+
           <div className="contentBox">
             <p>We are a team who was struggled at our A/Ls and trying to assist our </p>
             <p>fellow sisters and brothers in order to study the practicals effectively </p>

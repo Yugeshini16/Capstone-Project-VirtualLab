@@ -3,6 +3,8 @@ import { Col, Row } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import { data } from '../../assets/data';
+import './../pages/review.css';
+import Review from './review.js';
 
 const Quiz = () => {
     const Navigate = useNavigate();
@@ -64,17 +66,17 @@ const Quiz = () => {
         <>
             <div className='fulldiv'>
                 <div className='title1'>
-                    <h1 className='heading1'>Let’s Start Quiz</h1>
+                    <h2 className='heading1'>Let’s Start the Quiz</h2>
                     <hr className='hr1' />
                 </div>
             </div>
             <div className='container'>
-                <h5>ALL THE BEST!</h5>
+                <h3>ALL THE BEST!</h3>
                 <hr />
                 {result ? (
                     <>
-                        <h2>You have completed the quiz!</h2>
-                        <h3>Your score: {score} out of {data.length}</h3>
+                        <h4>You have completed the quiz!</h4>
+                        <h4>Your score: {score} out of {data.length}</h4>
                         <Button onClick={reset}>Reset</Button>{' '}
                         <Button onClick={() => Navigate('/Review')}>Review Answers</Button>
                     </>

@@ -6,70 +6,75 @@
 }
 
 .section2 h2{
-text-align: center;
-font-family: 'poppins';
-font-weight: 900;
-font-size: 50px;
-text-decoration: underline;
-color: #151854;
-width: 1200px;
-margin: auto;
+    text-align: center;
+    font-family: 'poppins';
+    font-weight: 900;
+    font-size: 50px;
+    text-decoration: underline;
+    color: #151854;
+    width: 1200px;
+    margin: auto;
 
 }
 .course{
-width:300px;
-margin: 0 50px 0 50px;
+    width:300px;
+    margin: 0 50px 0 50px;
 }
 
 .course h3{
-color: #0B036B;
-font-family: 'Lato';
-font-weight: bold;
-font-size: 24px;
-text-align: center;
+    color: #0B036B;
+    font-family: 'Lato';
+    font-weight: bold;
+    font-size: 27px;
+    text-align: justify;
+    margin-top: 18px;
 }
 
 .course p{
-color: black;
-font-family: 'poppins';
-font-size: 18px;
-text-align: justify;}
-.bg1{
-background-color: #151854;
-height: 250px;
-width: 250px;
-rotate: -17deg;
+    color: black;
+    font-family: 'poppins';
+    font-size: 18px;
+    text-align: justify;
 }
-.bg2{
-background-color: #031197;
-height: 250px;
-width: 250px;
-rotate: 37deg;
-}
-.img{
 
-rotate: 0deg;
+.bg1{
+    background-color: #151854;
+    height: 250px;
+    width: 250px;
+    rotate: -17deg;
+}
+
+.bg2{
+    background-color: #ddd7d7;
+    height: 250px;
+    width: 250px;
+    rotate: 37deg;
+}
+
+.img{
+    rotate: 0deg;
 }
 
 .course img{
-height: 245px;
-width: 245px;
-rotate: -7deg;
+    height: 245px;
+    width: 245px;
+    rotate: -7deg;
 }
 
 .bg1,
 .bg2,
 .img,
 .course img{
-border-radius: 70px;
+    border-radius: 70px;
 }
 
 .btnPlay{
-width: 30px;
-height: 30px;
-border: none;
-background-color: #151854;
-border-radius: 50%;
-color: #fff;
-padding: 10px ;
+    width: 40px;
+    height: 40px;
+    border-color: #4fcad1;
+    background-color: #151854;
+    border-radius: 50%;
+    color: #fff;
+    padding: 5px ;
+    align-items: center;
 }

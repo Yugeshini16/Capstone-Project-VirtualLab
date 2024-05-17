@@ -9,16 +9,15 @@ function TheorySteps(){
            
             <div className="contentClm">
                 <div className="stepCLm">
-                <Steps text='uses the knowledge of significant figures.'/>
-                <Steps text='uses the knowledge of significant figures.'/>
-                <Steps text='uses the knowledge of significant figures.'/>
-                <Steps text='uses the knowledge of significant figures.'/>
-                <Steps text='uses the knowledge of significant figures.'/>
-                <Steps text='uses the knowledge of significant figures.'/>
-
-
+                    <Steps text='uses the knowledge of significant figures.'/>
+                    <Steps text='uses the knowledge of significant figures.'/>
+                    <Steps text='uses the knowledge of significant figures.'/>
+                    <Steps text='uses the knowledge of significant figures.'/>
+                    <Steps text='uses the knowledge of significant figures.'/>
+                    <Steps text='uses the knowledge of significant figures.'/>
                 </div>
-                <img src="pictures/06.jpg" alt="auto"></img>
+                
+                <img src="pictures/PracticalSteps_PracticalStepPage.jpg" alt="auto"></img>
             </div>
         </div>
         </>

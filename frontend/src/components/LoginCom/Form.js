@@ -50,8 +50,9 @@ function CreateAccountForm() {
   return (
     <>
       <div className="containerSign">
-        <div className="header">
-          <img src='' alt="Logo" />
+         <div className="header">
+            <img src='favicon.ico'></img> 
+            <h2> Virtual Lab for A/L Students</h2>
         </div>    
         <div className="create-account-form">
           <h2>Log In</h2>
