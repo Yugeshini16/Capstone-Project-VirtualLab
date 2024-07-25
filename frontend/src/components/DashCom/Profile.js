@@ -10,6 +10,8 @@ import {
   deleteUserFailure,
   signOut,
 } from '../../redux/user/userSlice';
+import './Profile.css';
+
 
 export default function Profile() {
   const dispatch = useDispatch();
@@ -109,49 +111,49 @@ export default function Profile() {
   };
 
   return (
-    <div className='p-3 max-w-lg mx-auto'>
-      <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
-      <img
-        src={formData.profilePicture || currentUser.profilePicture}
-        alt='profile'
-      />
-      <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
-        <input
-          defaultValue={currentUser.username}
-          type='text'
-          id='username'
-          placeholder='Username'
-          onChange={handleChange}
+    <div className="profile-container">
+      <div className="main-content">
+        <img
+          src={formData.profilePicture || currentUser.profilePicture}
+          alt='profile'
         />
-        <input
-          defaultValue={currentUser.email}
-          type='email'
-          id='email'
-          placeholder='Email'
-          onChange={handleChange}
-        />
-        <input
-          type='password'
-          id='password'
-          placeholder='Password'
-          onChange={handleChange}
-        />
-        <button type='submit' disabled={!isPasswordEntered}>
-          {loading ? 'Loading...' : 'Update'}
-        </button>
-      </form>
-      {updateSuccess && <p className='text-green-700 mt-5'>User updated successfully!</p>}
-      {errorMessage && <p className='text-red-700 mt-5'>{errorMessage}</p>}
-      <div className='flex justify-between mt-5'>
-        <span
-          onClick={handleDeleteAccount}
-          className='text-red-700 cursor-pointer'
-        >
-          Delete Account
-        </span>
-        <span onClick={handleSignOut} className='text-red-700 cursor-pointer'>
-          Sign out
-        </span>
+        <form onSubmit={handleSubmit}>
+          <input
+            defaultValue={currentUser.username}
+            type='text'
+            id='username'
+            placeholder='Username'
+            onChange={handleChange}
+          />
+          <input
+            defaultValue={currentUser.email}
+            type='email'
+            id='email'
+            placeholder='Email'
+            onChange={handleChange}
+          />
+          <input
+            type='password'
+            id='password'
+            placeholder='Password'
+            onChange={handleChange}
+          />
+          <button type='submit' disabled={!isPasswordEntered}>
+            {loading ? 'Loading...' : 'Update'}
+          </button>
+        </form>
+        {updateSuccess && <p className='success'>User updated successfully!</p>}
+        {errorMessage && <p className='error'>{errorMessage}</p>}
+        <div className='actions'>
+          <span
+            onClick={handleDeleteAccount}
+          >
+            Delete Account
+          </span>
+          <span onClick={handleSignOut}>
+            Sign out
+          </span>
+        </div>
       </div>
     </div>
   );
