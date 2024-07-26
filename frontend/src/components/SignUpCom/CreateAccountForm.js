@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./CreateAccountForm.css";
 import Button from "react-bootstrap/Button";
 import { Link, useNavigate } from 'react-router-dom';
+import OAuth from '../LoginCom/OAuth'
 
 function CreateAccountForm() {
   const [Username, setUserName] = useState("");
@@ -154,6 +155,7 @@ function CreateAccountForm() {
               />
             </div>
             <Button disabled={loading} id="getnbtn" as="input" type="submit" value={loading ? 'Loading...' : 'Sign Up'} />
+            <OAuth/>
           </form>
           <p id="last">
             Already have an account? <Link to="/login">Sign In</Link>

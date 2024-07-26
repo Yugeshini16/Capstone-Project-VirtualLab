@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { First } from 'react-bootstrap/esm/PageItem';
 import { signInStart, signInSuccess, signInFailure } from '../../redux/user/userSlice';
 import { useSelector, useDispatch } from 'react-redux';
+import OAuth from './OAuth';
 
 function CreateAccountForm() {
   const [email, setEmail] = useState("");
@@ -82,6 +83,7 @@ function CreateAccountForm() {
             <input type="checkbox" value={First} /> Remember Me
             <p className="formRemember"><a href='#'>Forgot Password?</a></p>
             <Button disabled={loading} className="formBtn" as="input" type="submit" value={loading ? 'Loading...' : 'Sign In'} />
+            <OAuth/>
           </form>
           <p className="formLast">
             Don't have an account? <Link to='/SignUp'>Sign Up</Link>
