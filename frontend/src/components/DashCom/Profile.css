@@ -92,13 +92,13 @@
     font-size: 16px;
     border: none;
     border-radius: 5px;
-    background-color:rgb(20, 23, 83);
+    background-color:#002E6D;
     color: #ffffff;
     cursor: pointer;
   }
   
   .main-content form button:disabled {
-    background-color: rgb(141, 172, 207);
+    background-color: #E8F0FE;
   }
   
   .main-content p.success {

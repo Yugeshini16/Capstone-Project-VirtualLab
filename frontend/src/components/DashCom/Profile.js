@@ -12,8 +12,16 @@ import {
 } from '../../redux/user/userSlice';
 import './Profile.css';
 
-
 export default function Profile() {
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+          setUser(JSON.parse(storedUser));
+      }
+  }, []);
+
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({});
   const [updateSuccess, setUpdateSuccess] = useState(false);
@@ -34,11 +42,11 @@ export default function Profile() {
     event.preventDefault();
     try {
       dispatch(updateUserStart());
-      const res = await fetch(`http://localhost:3001/api/user/update/${currentUser._id}`, {
+      const res = await fetch(`http://localhost:3001/api/user/update/${currentUser?._id || user?._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${currentUser.token}`, // Assuming token-based authentication
+          'Authorization': `Bearer ${currentUser?.token || user?.token}`, // Assuming token-based authentication
         },
         body: JSON.stringify(formData),
       });
@@ -71,10 +79,10 @@ export default function Profile() {
     try {
       dispatch(deleteUserStart());
 
-      const res = await fetch(`http://localhost:3001/api/user/delete/${currentUser._id}`, {
+      const res = await fetch(`http://localhost:3001/api/user/delete/${currentUser?._id || user?._id}`, {
         method: 'DELETE',
         headers: {
-          'Authorization': `Bearer ${currentUser.token}`, // Assuming token-based authentication
+          'Authorization': `Bearer ${currentUser?.token || user?.token}`, // Assuming token-based authentication
         },
       });
 
@@ -101,7 +109,7 @@ export default function Profile() {
     try {
       await fetch('http://localhost:3001/api/auth/signout', {
         headers: {
-          'Authorization': `Bearer ${currentUser.token}`, // Assuming token-based authentication
+          'Authorization': `Bearer ${currentUser?.token || user?.token}`, // Assuming token-based authentication
         },
       });
       dispatch(signOut());
@@ -113,47 +121,45 @@ export default function Profile() {
   return (
     <div className="profile-container">
       <div className="main-content">
-        <img
-          src={formData.profilePicture || currentUser.profilePicture}
-          alt='profile'
-        />
-        <form onSubmit={handleSubmit}>
-          <input
-            defaultValue={currentUser.username}
-            type='text'
-            id='username'
-            placeholder='Username'
-            onChange={handleChange}
-          />
-          <input
-            defaultValue={currentUser.email}
-            type='email'
-            id='email'
-            placeholder='Email'
-            onChange={handleChange}
-          />
-          <input
-            type='password'
-            id='password'
-            placeholder='Password'
-            onChange={handleChange}
-          />
-          <button type='submit' disabled={!isPasswordEntered}>
-            {loading ? 'Loading...' : 'Update'}
-          </button>
-        </form>
-        {updateSuccess && <p className='success'>User updated successfully!</p>}
-        {errorMessage && <p className='error'>{errorMessage}</p>}
-        <div className='actions'>
-          <span
-            onClick={handleDeleteAccount}
-          >
-            Delete Account
-          </span>
-          <span onClick={handleSignOut}>
-            Sign out
-          </span>
-        </div>
+        {user && (
+          <>
+            <img
+              src={formData.profilePicture || currentUser?.profilePicture || user.profilePicture}
+              alt='profile'
+            />
+            <form onSubmit={handleSubmit}>
+              <input
+                defaultValue={currentUser?.username || user.username}
+                type='text'
+                id='username'
+                placeholder='Username'
+                onChange={handleChange}
+              />
+              <input
+                defaultValue={currentUser?.email || user.email}
+                type='email'
+                id='email'
+                placeholder='Email'
+                onChange={handleChange}
+              />
+              <input
+                type='password'
+                id='password'
+                placeholder='Password'
+                onChange={handleChange}
+              />
+              <button type='submit' disabled={!isPasswordEntered}>
+                {loading ? 'Loading...' : 'Update'}
+              </button>
+            </form>
+            {updateSuccess && <p className='success'>User updated successfully!</p>}
+            {errorMessage && <p className='error'>{errorMessage}</p>}
+            <div className='actions'>
+              <span onClick={handleDeleteAccount}>Delete Account</span>
+              <span onClick={handleSignOut}>Sign out</span>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
