@@ -29,7 +29,7 @@ function DashboardLeftSide() {
           <Link to='/profile'>profile</Link> 
         </a>
 
-        <a href="#" className='item'>
+        <a href="/DashboardQuiz" className='item'>
           <img src="/pictures/Quiz_Icon.svg"></img>
           Quizzes
         </a>

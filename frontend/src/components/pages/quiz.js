@@ -1,5 +1,5 @@
 import './quiz.css';
-import Review from './review.js';
+import Dashboard from './Dashboard.js';
 import { data } from '../../assets/data';
 import React, { useRef, useState } from 'react';
 import { Col, Row } from 'antd';
@@ -109,7 +109,7 @@ function Quiz() {
 
                             <div className='buttons'>
                                 <button onClick={reset}>Reset</button> {' '}
-                                    <a href='/Review'> 
+                                    <a href='/Dashboard'> 
                                         <Button> Done </Button>
                                     </a>
                             </div>
