@@ -1,10 +1,34 @@
 import './TheoryContent.css'
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+
+
+
 
 function TheoryContent(){
+    const { subject, index } = useParams();
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(`http://localhost:5000/api/practicals/${subject}practicals?subject=${subject}`);
+                setData(response.data[index]);
+            } catch (error) {
+                console.error("There was an error fetching the data!", error);
+            }
+        };
+        fetchData();
+    }, [subject, index]);
+
+    if (!data) {
+        return <div>Loading...</div>;
+    }
     return(
         <>
         <div className="theory">
-            <h2>Theory Content</h2>
+        <p>{data.theory}</p>
             <h3>Introduction</h3>
 
             <p> Student will be able to; identifies basic physical quantities 
