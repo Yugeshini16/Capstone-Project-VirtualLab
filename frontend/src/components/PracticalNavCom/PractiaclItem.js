@@ -21,7 +21,7 @@ function PracticalItem() {
         fetchData();
     }, [subject]);
     const handlePracticalClick = (index) => {
-        navigate(`/singlePractical/${subject}/${index}`);
+        navigate(`/singlepractical/${subject}/${index}`);
       };
     
       return (
