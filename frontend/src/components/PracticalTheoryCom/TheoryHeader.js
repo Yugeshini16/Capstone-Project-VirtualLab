@@ -37,6 +37,11 @@ function TheoryHeader(){
             </div>
 
             <div className='Featuredimage'>
+            {data.tests.map(test => (
+                <div key={test._id}>
+                    <h2>{test.test_name}</h2>
+                    </div>
+            ))}
                 <img src="/pictures/01.jpg" alt="featured"/>
             </div>
         </>
