@@ -25,7 +25,7 @@ function DashboardLeftSide({ setCurrentContent }) {
                         Profile
                     </div>
 
-                    <div className='item' onClick={() => setCurrentContent('dashboard')}>
+                    <div className='item' onClick={() => setCurrentContent('dashboardQuiz')}>
                         Quizzes
                     </div>
 

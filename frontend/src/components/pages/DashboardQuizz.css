@@ -1,0 +1,41 @@
+.title1{
+    margin-top: -15px;
+    background-color: #151854;
+    height: 80px;
+}
+
+.heading1{
+    font-family: Calibri (Body);
+    color: #FFFFFF;
+    text-align: center;
+    text-justify: distribute-all-lines;
+    margin-top: 15px;
+    font-size: 50px;
+}
+
+.hr1{
+    width: 25%;
+    height: 50px;
+    color: #FFFFFF;
+    margin-top: 10px;
+    margin-left: 550px;
+}
+
+/* .CardDiv{
+    justify-content: center;
+} */
+
+.Card{
+    margin-left: 400px;
+    background-color: rgba(163, 154, 245, 0.329) !important;
+    background-image: none;
+}
+
+.cardText{
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+.RightCol{
+    margin-left: 350px;
+}

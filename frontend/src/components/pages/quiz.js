@@ -1,6 +1,8 @@
 import './quiz.css';
+
 import axios from 'axios';
 import React, { useEffect, useRef, useState } from 'react';
+
 import { Col, Row } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
@@ -117,6 +119,7 @@ function Quiz() {
                                 <Row>
                                     <Col className='name' span={24}><h5>John Smith</h5></Col>
                                 </Row>
+
                                 <Row>
                                     <Col className='emal' span={24}><h5>johnSmith@gmail.com</h5></Col>
                                 </Row>
@@ -134,6 +137,17 @@ function Quiz() {
                                 <Col className='col' span={8}><h5>{Math.round((score / questions.length) * 100)}</h5> <br /> <h4>Percentage</h4></Col>
                                 <Col className='col' span={8}><h5>{Math.ceil(Math.random() * 10)}</h5> <br /> <h4>Rank</h4></Col>
                             </Row>
+=======
+                            </div>
+                            <br/><br/>
+
+                            <div className='buttons'>
+                                <button onClick={reset}>Reset</button> {' '}
+                                    <a href='/Dashboard'> 
+                                        <Button> Done </Button>
+                                    </a>
+                            </div>
+
                         </div>
                         <br /><br />
                         <div className='buttons'>

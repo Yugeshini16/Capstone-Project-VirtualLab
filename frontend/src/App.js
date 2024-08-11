@@ -16,6 +16,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import PrivateRoute from './components/PrivateRoute.js';
 import Profile from './components/DashCom/Profile';
 import Chatbot from './components/ChatCom/chatbot'
+import DashboardQuizz from './components/pages/DashboardQuizz.js';
 
 function App() {
   return (
@@ -40,10 +41,13 @@ function App() {
               <Route path='/quiz' exact element={<Quiz />} />
               <Route path='/Review' exact element={<Review />} />
               <Route path='/chatbot' exact element={<Chatbot/>}/>
+              <Route path='/DashboardQuiz' exact element={<DashboardQuizz/>}/>
             </Routes>
           </Router>
         </PersistGate>
       </Provider>
+
+
     </>
   );
 }
