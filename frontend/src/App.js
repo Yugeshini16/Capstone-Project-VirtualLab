@@ -35,9 +35,9 @@ function App() {
               </Route>
               <Route path='/Subjects' exact element={<SubjectNavigation />} />
               <Route path='/Login' exact element={<Login />} />
-              <Route path='/practical' exact element={<PracticalNav />} />
-              <Route path='/singlePratical' exact element={<PracticalTheory />} />
-              <Route path='/PracticalSteps' exact element={<PracticalSteps />} />
+              <Route path='/subjectList/:subject' exact element={<PracticalNav />} />
+              <Route path="/singlepractical/:subject/:index" exact element={<PracticalTheory />} />
+              <Route path='/PracticalSteps/:subject/:index' exact element={<PracticalSteps />} />
               <Route path='/quiz' exact element={<Quiz />} />
               <Route path='/Review' exact element={<Review />} />
               <Route path='/chatbot' exact element={<Chatbot/>}/>

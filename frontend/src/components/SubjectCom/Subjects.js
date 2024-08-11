@@ -20,14 +20,7 @@ const Subjects = () => {
     }, []);
 
     const handleSubjectClick = (subjectName) => {
-        if (subjectName.toLowerCase() === 'biology') {
-            navigate(`/bioList/${subjectName}`);
-        } else if (subjectName.toLowerCase() === 'chemistry') {
-            navigate(`/chemistryList/${subjectName}`);
-        } else if (subjectName.toLowerCase() ==='physics'){
-            navigate(`/physicsList/${subjectName}`);
-
-        }
+        navigate(`/subjectList/${subjectName.toLowerCase()}`);
     };
 
     return (
@@ -48,3 +41,8 @@ const Subjects = () => {
 };
 
 export default Subjects;
+
+
+
+
+
