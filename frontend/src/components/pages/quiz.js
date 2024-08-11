@@ -109,45 +109,44 @@ function Quiz() {
                 <h3>ALL THE BEST!</h3>
                 <hr />
                 {result ? (
-                    <div className='results'>
-                        <Row>
-                            <Col span={24}><h4>Grade 12 - Semester 2 - Practical No.03</h4></Col>
-                        </Row>
-                        <Row>
-                            <Col className='profpic' span={6}><img src="pictures/user.jpg" alt="User" /></Col>
-                            <Col className='profdesc' span={12}>
-                                <Row>
-                                    <Col className='name' span={24}><h5>John Smith</h5></Col>
-                                </Row>
-
-                                <Row>
-                                    <Col className='emal' span={24}><h5>johnSmith@gmail.com</h5></Col>
-                                </Row>
-                                <Row>
-                                    <Col className='f-resu' span={24}>
-                                        <h2>You Scored {score} out of {questions.length}</h2>
-                                    </Col>
-                                </Row>
-                            </Col>
-                            <Col span={5}><img className='medalpic' src="pictures/medal.jpg" alt="medalpic" /></Col>
-                        </Row>
-                        <div className='f-result'>
+                    <>
+                        <div className='results'>
                             <Row>
-                                <Col className='col' span={8}><h5>{score}</h5> <br /> <h4>Score</h4></Col>
-                                <Col className='col' span={8}><h5>{Math.round((score / questions.length) * 100)}</h5> <br /> <h4>Percentage</h4></Col>
-                                <Col className='col' span={8}><h5>{Math.ceil(Math.random() * 10)}</h5> <br /> <h4>Rank</h4></Col>
+                                <Col span={24}><h4>Grade 12 - Semester 2 - Practical No.03</h4></Col>
                             </Row>
-=======
+                            <Row>
+                                <Col className='profpic' span={6}><img src="pictures/user.jpg" alt="User" /></Col>
+                                <Col className='profdesc' span={12}>
+                                    <Row>
+                                        <Col className='name' span={24}><h5>John Smith</h5></Col>
+                                    </Row>
+
+                                    <Row>
+                                        <Col className='emal' span={24}><h5>johnSmith@gmail.com</h5></Col>
+                                    </Row>
+                                    <Row>
+                                        <Col className='f-resu' span={24}>
+                                            <h2>You Scored {score} out of {questions.length}</h2>
+                                        </Col>
+                                    </Row>
+                                </Col>
+                                <Col span={5}><img className='medalpic' src="pictures/medal.jpg" alt="medalpic" /></Col>
+                            </Row>
+                            <div className='f-result'>
+                                <Row>
+                                    <Col className='col' span={8}><h5>{score}</h5> <br /> <h4>Score</h4></Col>
+                                    <Col className='col' span={8}><h5>{Math.round((score / questions.length) * 100)}</h5> <br /> <h4>Percentage</h4></Col>
+                                    <Col className='col' span={8}><h5>{Math.ceil(Math.random() * 10)}</h5> <br /> <h4>Rank</h4></Col>
+                                </Row>
                             </div>
                             <br/><br/>
 
                             <div className='buttons'>
                                 <button onClick={reset}>Reset</button> {' '}
-                                    <a href='/Dashboard'> 
-                                        <Button> Done </Button>
-                                    </a>
+                                <a href='/Dashboard'> 
+                                    <Button> Done </Button>
+                                </a>
                             </div>
-
                         </div>
                         <br /><br />
                         <div className='buttons'>
@@ -156,7 +155,7 @@ function Quiz() {
                                 <Button> Done </Button>
                             </a>
                         </div>
-                    </div>
+                    </>
                 ) : (
                     <>
                         <h2>{index + 1}. {questions[index].question}</h2>
