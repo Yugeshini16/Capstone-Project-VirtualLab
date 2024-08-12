@@ -1,7 +1,7 @@
 import './DashContent.css'
 import ImageSlider from './ImageSlider';
 import { useState, useEffect } from 'react';
-import { Col, Progress, Row } from 'antd';
+import { Col, Progress, Row, Flex } from 'antd';
 
 const course = [
   
@@ -67,10 +67,14 @@ function Dashcontent() {
     const fetchAndUpdateCourses = async () => {
         const progressData = await fetchProgressData(userID);
         if (progressData) {
-            const updatedCourses = course.map(c => ({
-                ...c,
-                progress: progressData.progress[c.title]?.completed ?? 0
-            }));
+          const percentages = progressData.percentages;
+          const updatedCourses = course.map(c => {
+              const progress = percentages[c.title]?.completed;
+              return {
+                  ...c,
+                  progress: parseFloat(progress) || 0
+              };
+          });
             setCourses(updatedCourses);
         } else {
             console.error('Failed to fetch or update progress data');
@@ -100,16 +104,13 @@ function Dashcontent() {
             <div className="card">
               <div className="card--title">
               <Row>
-                <Col>
+                <Col span={24}>
                 <h2>{item.title}</h2>
                 <div className="underline">
-                {/* <Circle progress={item.progress}/> */}
-    
+                  <Flex>
+                    <Progress percent={item.progress} />
+                  </Flex>
                 </div>
-                </Col>
-                <Col xs={5} offset={1}>
-
-                <Progress size={90} type="dashboard" percent={item.progress} />
                 </Col>
               </Row>
                

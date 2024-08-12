@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect,useState } from 'react';
 import './DashboardQuizz.css';
 import Card from 'react-bootstrap/Card';
 import { Col, Row } from 'antd';
@@ -73,6 +73,43 @@ const QuizCard = ({ title, practicals, completedPercent }) => (
 );
 
 function DashboardQuizz() {
+
+  const [QuizData, setQuizData] = useState([]);
+  const userID = '661feaf6361ab29bad028f9d'
+
+  async function fetchQuizData(userID) {
+    try {
+        const response = await fetch("http://localhost:3001/api/quizDashboard", {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userID:userID }) // Adjust as needed
+        });
+
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+
+        const quizDashData = await response.json();
+        return quizDashData;
+    } catch (error) {
+        console.error('Error fetching progress data:', error);
+        return null; // Handle the error appropriately in your application
+    }
+}
+
+  useEffect(() => {
+    const fetchAndUpdateQuizData = async () => {
+        const dashData = await fetchQuizData(userID);
+        if (dashData) {
+            setQuizData(dashData);
+        } else {
+            console.error('Failed to fetch or update progress data');
+        }
+    };
+
+    fetchAndUpdateQuizData();
+}, [userID]);
+
   return (
     <div>
       <div className='title1'>
@@ -81,7 +118,7 @@ function DashboardQuizz() {
       </div>
       <br />
       <div className='CardDiv'>
-        {quizData.map((quiz, index) => (
+        {QuizData.map((quiz, index) => (
           <React.Fragment key={index}>
             <QuizCard {...quiz} />
             <br />
