@@ -8,33 +8,45 @@ const quizData = [
   { 
     title: 'PHYSICS', 
     practicals: [
-      { name: 'Practical Name 1', score: 7, rank: 1, percentage: 70 }, // 7/10
-      { name: 'Practical Name 2', score: 5, rank: 2, percentage: 50 }  // 5/10
+      { name: 'Practical Name 1', score: 7, rank: 1, medal: 70 }, // 7/10
+      { name: 'Practical Name 2', score: 5, rank: 2, medal: 50 }  // 5/10
     ], 
     completedPercent: 50 
   },
   { 
     title: 'CHEMISTRY', 
     practicals: [
-      { name: 'Practical Name', score: 8, rank: 1, percentage: 80 }  // 8/10
+      { name: 'Practical Name', score: 8, rank: 1, medal: 80 }  // 8/10
     ], 
     completedPercent: 50 
   },
   { 
     title: 'BIOLOGY', 
     practicals: [
-      { name: 'Practical Name', score: 6, rank: 1, percentage: 60 }  // 6/10
+      { name: 'Practical Name', score: 6, rank: 1, medal: 60 }  // 6/10
     ], 
     completedPercent: 50 
   },
   { 
     title: 'INFORMATION SYSTEM', 
     practicals: [
-      { name: 'Practical Name', score: 9, rank: 1, percentage: 90 }  // 9/10
+      { name: 'Practical Name', score: 9, rank: 1, medal: 90 }  // 9/10
     ], 
     completedPercent: 50 
   }
 ];
+
+const getMedalImage = (score) => {
+  if (score > 80) {
+      return <img src="/gold.png" alt="Gold Medal" width="60" />;
+  } else if (score > 70 && score <= 80) {
+      return <img src="/silver.png" alt="Silver Medal" width="60" />;
+  } else if (score >= 50 && score <= 70) {
+      return <img src="/bronze.png" alt="Bronze Medal" width="60" />;
+  } else {
+      return <span>No Medal</span>;
+  }
+};
 
 const QuizCard = ({ title, practicals, completedPercent }) => (
   <Card className='Card' style={{ width: '550px', height: 'auto' }}>
@@ -48,12 +60,9 @@ const QuizCard = ({ title, practicals, completedPercent }) => (
             <Row>
               <Col>
                 Score: {practical.score} <br />
-                Rank: {practical.rank}
               </Col>
               <Col className='RightCol'>
-                <Flex align="center" wrap gap={30}>
-                  <Progress type="circle" percent={practical.percentage} size={50} />
-                </Flex>
+                {getMedalImage(practical.medal)}
               </Col>
             </Row>
           </Card.Text>

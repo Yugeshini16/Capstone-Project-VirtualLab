@@ -136,7 +136,7 @@ function Quiz() {
                                 <Row>
                                     <Col className='col' span={8}><h5>{score}</h5> <br /> <h4>Score</h4></Col>
                                     <Col className='col' span={8}><h5>{Math.round((score / questions.length) * 100)}</h5> <br /> <h4>Percentage</h4></Col>
-                                    <Col className='col' span={8}><h5>{Math.ceil(Math.random() * 10)}</h5> <br /> <h4>Rank</h4></Col>
+                                    <Col className='col' span={8}><h5>{Math.ceil(Math.random() * 10)}</h5> <br /> <h4>Medal</h4></Col>
                                 </Row>
                             </div>
                             <br/><br/>
