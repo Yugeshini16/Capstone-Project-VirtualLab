@@ -78,13 +78,6 @@
 
 }
 
-.underline {
-    width: 350px;
-    height: 9px;
-    border-radius: 22px;
-    background-color: #141753;
-}
-
 /*down*/
 .card-container {
     display: grid;
