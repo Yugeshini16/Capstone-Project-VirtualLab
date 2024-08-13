@@ -15,6 +15,9 @@ function Quiz() {
     const [lock, setLock] = useState(false);
     const [score, setScore] = useState(0);
     const [result, setResult] = useState(false);
+    const userID = JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user).currentUser._id;
+    
+    
 
     const Option1 = useRef(null);
     const Option2 = useRef(null);
@@ -68,6 +71,7 @@ function Quiz() {
     const next = () => {
         if (index === questions.length - 1) {
             setResult(true);
+            saveQuizData();
             return;
         }
         setIndex(prevIndex => prevIndex + 1);
@@ -79,6 +83,24 @@ function Quiz() {
                 option.current.classList.remove("wrong", "correct");
             }
         });
+    };
+
+    const saveQuizData = async () => {
+        const practicalID = `practical_${Math.floor(Math.random() * 1000)}`; // Generate a random practical ID replace with actual practical ID
+        const dataToSend = {
+            userID: userID, 
+            practicalID: practicalID, 
+            practicalSubject: "BIOLOGY", 
+            completed: true, 
+            no_of_correct_answers: score 
+        };
+
+        try {
+            const response = await axios.post("http://localhost:3001/api/quiz/save", dataToSend); 
+            console.log("Quiz data saved successfully:", response.data); 
+        } catch (error) {
+            console.error("Error saving quiz data:", error); 
+        }
     };
 
     const reset = () => {
@@ -135,26 +157,20 @@ function Quiz() {
                             <div className='f-result'>
                                 <Row>
                                     <Col className='col' span={8}><h5>{score}</h5> <br /> <h4>Score</h4></Col>
-                                    <Col className='col' span={8}><h5>{Math.round((score / questions.length) * 100)}</h5> <br /> <h4>Percentage</h4></Col>
-                                    <Col className='col' span={8}><h5>{Math.ceil(Math.random() * 10)}</h5> <br /> <h4>Rank</h4></Col>
+                                    <Col className='col' span={8}><h5>{Math.round((score / questions.length) * 100)}%</h5> <br /> <h4>Percentage</h4></Col>
+                                    <Col className='col' span={8}><h5>{Math.ceil(Math.random() * 10)}</h5> <br /> <h4>Medal</h4></Col>
                                 </Row>
                             </div>
                             <br/><br/>
 
                             <div className='buttons'>
-                                <button onClick={reset}>Reset</button> {' '}
+                                <Button onClick={reset}>Reset</Button> {' '}
                                 <a href='/Dashboard'> 
                                     <Button> Done </Button>
                                 </a>
                             </div>
                         </div>
-                        <br /><br />
-                        <div className='buttons'>
-                            <button onClick={reset}>Reset</button> {' '}
-                            <a href='/Review'>
-                                <Button> Done </Button>
-                            </a>
-                        </div>
+                        <br/>
                     </>
                 ) : (
                     <>
