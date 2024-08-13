@@ -39,9 +39,9 @@ const quizData = [
 const getMedalImage = (score) => {
   if (score > 80) {
       return <img src="/gold.png" alt="Gold Medal" width="60" />;
-  } else if (score > 70 && score <= 80) {
+  } else if (score > 60 && score <= 80) {
       return <img src="/silver.png" alt="Silver Medal" width="60" />;
-  } else if (score >= 50 && score <= 70) {
+  } else if (score >= 10 && score <= 60) {
       return <img src="/bronze.png" alt="Bronze Medal" width="60" />;
   } else {
       return <span>No Medal</span>;
@@ -62,7 +62,7 @@ const QuizCard = ({ title, practicals, completedPercent }) => (
                 Score: {practical.score} <br />
               </Col>
               <Col className='RightCol'>
-                {getMedalImage(practical.medal)}
+                {getMedalImage(practical.percentage)}
               </Col>
             </Row>
           </Card.Text>
@@ -75,7 +75,7 @@ const QuizCard = ({ title, practicals, completedPercent }) => (
 function DashboardQuizz() {
 
   const [QuizData, setQuizData] = useState([]);
-  const userID = '661feaf6361ab29bad028f9d'
+  const userID = JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user).currentUser._id;
 
   async function fetchQuizData(userID) {
     try {

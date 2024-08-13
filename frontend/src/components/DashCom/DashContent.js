@@ -38,7 +38,7 @@ const course = [
 function Dashcontent() {
 
   const [courses, setCourses] = useState(course);
-  const userID = '661feaf6361ab29bad028f9d'
+  const userID = JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user).currentUser._id;
 
   async function fetchProgressData(userID) {
     console.log(`Sending request with userID: ${userID}`);

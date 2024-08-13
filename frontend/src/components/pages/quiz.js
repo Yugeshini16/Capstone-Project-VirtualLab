@@ -90,7 +90,7 @@ function Quiz() {
         const dataToSend = {
             userID: userID, 
             practicalID: practicalID, 
-            practicalSubject: "BIOLOGY", 
+            practicalSubject: "Biology", 
             completed: true, 
             no_of_correct_answers: score 
         };
@@ -119,6 +119,18 @@ function Quiz() {
         return <div>Question not available</div>;
     }
 
+    const getMedalImage = (score) => {
+        if (score > 80) {
+            return <img src="/gold.png" alt="Gold Medal" width="60" />;
+        } else if (score > 60 && score <= 80) {
+            return <img src="/silver.png" alt="Silver Medal" width="60" />;
+        } else if (score >= 10 && score <= 60) {
+            return <img src="/bronze.png" alt="Bronze Medal" width="60" />;
+        } else {
+            return <span>No Medal</span>;
+        }
+      };
+
     return (
         <>
             <div className='fulldiv'>
@@ -134,7 +146,7 @@ function Quiz() {
                     <>
                         <div className='results'>
                             <Row>
-                                <Col span={24}><h4>Grade 12 - Semester 2 - Practical No.03</h4></Col>
+                                <Col span={24}><h4>Your Quiz Result</h4></Col>
                             </Row>
                             <Row>
                                 <Col className='profpic' span={6}><img src="pictures/user.jpg" alt="User" /></Col>
@@ -152,13 +164,13 @@ function Quiz() {
                                         </Col>
                                     </Row>
                                 </Col>
-                                <Col span={5}><img className='medalpic' src="pictures/medal.jpg" alt="medalpic" /></Col>
+                                {/* <Col span={5}><img className='medalpic' src="pictures/medal.jpg" alt="medalpic" /></Col> */}
                             </Row>
                             <div className='f-result'>
                                 <Row>
-                                    <Col className='col' span={8}><h5>{score}</h5> <br /> <h4>Score</h4></Col>
-                                    <Col className='col' span={8}><h5>{Math.round((score / questions.length) * 100)}%</h5> <br /> <h4>Percentage</h4></Col>
-                                    <Col className='col' span={8}><h5>{Math.ceil(Math.random() * 10)}</h5> <br /> <h4>Medal</h4></Col>
+                                    <Col className='col1' span={8}><h5 className='col2'>{score}</h5> <br /> <h4 className='col1'>Score</h4></Col>
+                                    <Col className='col1' span={8}><h5 className='col2'>{Math.round((score / questions.length) * 100)}%</h5> <br /> <h4 className='col1'>Percentage</h4></Col>
+                                    <Col className='col' span={8}><h5>{getMedalImage(Math.round((score / 5) * 100))}</h5> <br /> <h4 className='col13'>Medal</h4></Col>
                                 </Row>
                             </div>
                             <br/><br/>
