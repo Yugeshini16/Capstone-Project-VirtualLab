@@ -2,7 +2,6 @@
     width: 100%;
     height: 300px;
     background-color: #151854;
-    margin-top: -50px;
     padding-top: 100px;
 }
 
@@ -12,9 +11,9 @@
     font-family: 'poppins';
     font-size: 30px;
     text-align: center;
+    padding-bottom: 60px;
     width: 1000px;
     margin: auto;
-    text-decoration: underline #fff 3px;
 }
 
 .heading .date{
@@ -22,8 +21,6 @@
     font-family: 'poppins';
     font-size: 30px;
     color: #ADB0EF;
-    text-align: center;
-    margin-left: 20px;
 }
 
 .Featuredimage{

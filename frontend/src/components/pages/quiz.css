@@ -1,19 +1,19 @@
-.title1{
+/* General Styles */
+.title1 {
     margin-top: 20px;
     background-color: #151854;
     height: 80px;
 }
 
-.heading1{
+.heading1 {
     font-family: Calibri (Body);
     color: #FFFFFF;
     text-align: center;
-    text-justify: distribute-all-lines;
     margin-top: 15px;
     font-size: 50px;
 }
 
-.hr1{
+.hr1 {
     width: 25%;
     height: 50px;
     color: #FFFFFF;
@@ -21,42 +21,52 @@
     margin-left: 550px;
 }
 
-.container{
+/* Container Styles */
+.container {
     width: 700px;
     margin: auto;
     margin-top: 25px;
-    background: #babeff7c;
+    background: #f0f8ff;
     color: #000000;
     display: flex;
     flex-direction: column;
     gap: 10px;
     border-radius: 10px;
-    padding: 40px,50px;
-    font-family: Calibri (Body);
+    padding: 40px 50px;
+    font-family: 'Calibri', sans-serif;
+    animation: fadeIn 1s ease-in;
 }
 
-.container h3{
-    color: #000000ce;
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Header Styles */
+.container h3 {
+    color: #00008b;
     font-weight: 550;
     margin-top: 5px;
     margin-left: 15px;
     font-size: 50px;
 }
 
-.container hr{
+.container hr {
     height: 7px;
     border: none;
     background: #00000052;
 }
 
-.container h2{
-    font-size: 20px;
-    font-weight: 350;
+/* Question Styles */
+.container h2 {
+    font-size: 22px;
+    font-weight: 400;
     margin-top: 10px;
     margin-left: 30px;
+    color: #00008b;
 }
 
-.container ul li{
+.container ul li {
     display: flex;
     align-items: center;
     height: 50px;
@@ -67,9 +77,16 @@
     font-size: 15px;
     cursor: pointer;
     width: 80%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.container button{
+.container ul li:hover {
+    background-color: #add8e6;
+    transform: scale(1.05);
+}
+
+/* Button Styles */
+.container button {
     margin: auto;
     width: 200px;
     height: 50px;
@@ -79,120 +96,77 @@
     font-weight: 500;
     border-radius: 10px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.container .index{
+.container button:hover {
+    background-color: #00008b;
+}
+
+.container .index {
     margin: auto;
     font-size: 13px;
-    color: #000000b0;
-    margin-bottom: 10px;
+    font-weight: 400;
+    color: #00008b;
 }
 
-.container .correct{
-    background: #00ff2a62;
-    border-color: #00b637c5;
+.container ul li.correct {
+    background: green;
+    color: white;
+    transform: scale(1.1);
 }
 
-.container .wrong{
-    background: #ffadad;
-    border-color: #fd4646;
+.container ul li.wrong {
+    background: red;
+    color: white;
+    transform: scale(1.1);
 }
 
-.results{
-    margin-left: 20px;
+/* Result Styles */
+.results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.results h4{
-    color: #000000a2;
+.results h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
 }
 
-.profpic img{
-    margin-top: 30px;
-    width: 95%;
-    height: 65%;
+.f-result {
+    text-align: center;
 }
 
-.profdesc{
-    margin-top: 70px;
-    margin-left: 10px
-}
-
-.medalpic{
-    width: 140%;
-    height: 100%;
-    margin-left: -40px;
-    margin-top: -50px;
-}
-
-.name{
-    margin-top: -20px;
+.f-result h4 {
+    margin-top: 15px;
     font-size: 15px;
 }
 
-.emal{
-    margin-top: -3px;
-    color: rgba(0, 0, 0, 0.61);
+.f-result h5 {
+    margin-bottom: 0;
+    font-size: 45px;
+    color: #00008b;
 }
 
-.f-resu h2{
-    margin-top: 60px;
-    margin-left: -5px;
-    font-size: 30px;
-    font-weight: 500;
-    color: #002981af;
+.best-try {
+    color: orange;
 }
 
-.f-result{
-    margin-top: 20px;
-    background-color: #ffffff;
-    width: 80%;
-    text-align: center;
-    margin-left: 45px;
-    border-radius: 50px;
+.try-again {
+    color: blue;
 }
 
-.col{
-    margin-top: 5px;
-    color: rgba(0, 0, 0, 0.356);
-    font-weight: 500;
+.congratulations {
+    color: green;
 }
 
-.col1{
-    margin-top: 15px;
-    font-weight: 500;
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.col2{
-    margin-top: 6px;
-    font-weight: 500;
-    font-size: 30px;
-}
-
-.col3{
-    margin-top: 10px;
-    color: rgba(0, 0, 0, 0.356);
-    font-weight: 500;
-}
-
-/* .col h1{
-    margin-top: 10px;
-}
-
-.col h4{
-    margin-top: -18px;
-    margin-bottom: 13px;
-    color: rgba(0, 0, 0, 0.356);
-    font-weight: 500;
-    margin-top: 10px;
-} */
-
-.toReview{
-    margin-left: 90px;
-}
-
-.buttons{
-    text-align: center;
-    word-spacing: 30px;
-    margin-bottom: 30px;
-    margin-top: -10px;
+.buttons Button {
+    width: 150px;
 }

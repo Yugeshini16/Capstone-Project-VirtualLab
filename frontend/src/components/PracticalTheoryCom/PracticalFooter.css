@@ -40,3 +40,8 @@
     transition: ease-in-out 1.3s;
     letter-spacing: 0.23em;
 }
+.playbtn.disabled {
+    pointer-events: none;
+    background-color: grey;
+    cursor: not-allowed;
+}

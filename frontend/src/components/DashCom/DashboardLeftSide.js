@@ -1,12 +1,21 @@
 import './DashboardLeftSide.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../ChatCom/chatbot';
+import Chatbot from '../ChatCom/chatbot';
+import { useState } from 'react';
+import {Link} from 'react-router-dom';
 
 function DashboardLeftSide({ setCurrentContent }) {
+    const [showChatbot, setShowChatbot] = useState(false);
+
+    const handleToggleChatbot = () => {
+        setShowChatbot(!showChatbot);
+    };
     return (
         <>
             <div className="menu">
                 <div className="logo">
-                    <img src="/pictures/VirtualLab Logo.png" />
+                    <Link to='/'><img src="/pictures/VirtualLab Logo.png" /></Link>
                 </div>
 
                 <div className='search-box1'>
@@ -16,8 +25,8 @@ function DashboardLeftSide({ setCurrentContent }) {
                     <p>Menu</p>
                 </div>
 
-                <div className='Dash1'>
-                    <p>Dashboard</p>
+                <div className='Dash1 active'>
+                    <a href='/Dashboard'>Dashboard</a>
                 </div>
 
                 <div className="menu--list">
@@ -33,8 +42,9 @@ function DashboardLeftSide({ setCurrentContent }) {
                         Experiments
                     </div>
 
-                    <div className='item' onClick={() => setCurrentContent('dashboard')}>
+                    <div className='item' onClick={handleToggleChatbot}>
                         AI chat
+                        {showChatbot && <Chatbot/>}
                     </div>
                 </div>
             </div>

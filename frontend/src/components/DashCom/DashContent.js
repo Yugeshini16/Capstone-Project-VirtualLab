@@ -1,130 +1,135 @@
-import './DashContent.css'
+import './DashContent.css';
 import ImageSlider from './ImageSlider';
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Col, Progress, Row, Flex } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 const course = [
-  
-    {
+  {
     title: "Physics",
-    duration:'2 Hours',
-    progress:0,
-
+    duration: '2 Hours',
+    progress: 0,
   },
-
   {
     title: "Chemistry",
-    duration:'2 Hours',
-    progress:0    
+    duration: '2 Hours',
+    progress: 0,
   },
-  
   {
     title: "Biology",
-    duration:'2 Hours',
-    progress:0,
-    
+    duration: '2 Hours',
+    progress: 0,
   },
-  
   {
     title: "Information Technology",
-    duration:'2 Hours',
-    progress:0,
+    duration: '2 Hours',
+    progress: 0,
   },
-
-  
-  
-]
+];
 
 function Dashcontent() {
-
   const [courses, setCourses] = useState(course);
-  const userID = JSON.parse(JSON.parse(localStorage.getItem('persist:root')).user).currentUser._id;
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+      const storedUser = localStorage.getItem('user');
+      if (storedUser) {
+          setUser(JSON.parse(storedUser));
+      }
+  }, []);
+
+  const { currentUser } = useSelector((state) => state.user);
+
+  useEffect(() => {
+    const userID = user?._id || currentUser?._id;
+    if (userID) {
+      console.log("User ID from currentUser:", userID);
+      fetchAndUpdateCourses(userID);
+    } else {
+      console.error("User ID is undefined or currentUser is not available");
+    }
+  }, [currentUser || user]);
 
   async function fetchProgressData(userID) {
     console.log(`Sending request with userID: ${userID}`);
     try {
-        const response = await fetch("http://localhost:3001/api/dashboard/progress", {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ userID:userID }) // Adjust as needed
-        });
+      const response = await fetch(`http://localhost:3001/api/dashboard/progress/${userID}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+      });
 
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
 
-        const progressData = await response.json();
-        console.log(progressData);
-        return progressData;
+      const progressData = await response.json();
+      console.log("Progress data fetched:", progressData);
+      return progressData;
     } catch (error) {
-        console.error('Error fetching progress data:', error);
-        return null; // Handle the error appropriately in your application
+      console.error('Error fetching progress data:', error);
+      return null;
     }
-}
+  }
 
-  useEffect(() => {
-    console.log("from here",userID);
-    const fetchAndUpdateCourses = async () => {
-        const progressData = await fetchProgressData(userID);
-        if (progressData) {
-          const percentages = progressData.percentages;
-          const updatedCourses = course.map(c => {
-              const progress = percentages[c.title]?.completed;
-              return {
-                  ...c,
-                  progress: parseFloat(progress) || 0
-              };
-          });
-            setCourses(updatedCourses);
-        } else {
-            console.error('Failed to fetch or update progress data');
-        }
-    };
+  async function fetchAndUpdateCourses(userID) {
+    const progressData = await fetchProgressData(userID);
+    if (progressData) {
+      const percentages = progressData.percentages;
+      const updatedCourses = course.map((c) => {
+        const progress = percentages[c.title]?.completed;
+        return {
+          ...c,
+          progress: parseFloat(progress) || 0,
+        };
+      });
+      setCourses(updatedCourses);
+    } else {
+      console.error('Failed to fetch or update progress data');
+    }
+  }
 
-    fetchAndUpdateCourses();
-}, [userID]);
+  const handleSubjectClick = (subjectName) => {
+    navigate(`/subjectList/${subjectName.toLowerCase()}`);
+  };
 
-    return (
-        <>
-        <div className="containerDash">
+  return (
+    <>
+      <div className="containerDash">
         <div className="text-center00">
-        <div className="text-center0">
-          <h1 className="display-4">Dashboard</h1>
-          <p className="lead">Your Progress</p>
-    
-        </div>
-        <div className='helpBox'>
-          <p>Hi, I'm here to help you!</p>
-            <img src='pictures/proflile.png' className='pp'></img>
-          
+          <div className="text-center0">
+            <h1 className="display-4">Dashboard</h1>
+            <p className="lead">Your Progress</p>
+          </div>
+          <div className='helpBox'>
+            <p>Hi, I'm here to help you!</p>
+            <img src='pictures/proflile.png' className='pp' alt="profile" />
           </div>
         </div>
         <div className='card-container'>
           {courses.map((item) => (
-            <div className="card">
+            <div className="card" key={item.title} onClick={() => handleSubjectClick(item.title)}>
               <div className="card--title">
-              <Row>
-                <Col span={24}>
-                <h2>{item.title}</h2>
-                <div className="underline">
-                  <Flex>
-                    <Progress percent={item.progress} />
-                  </Flex>
-                </div>
-                </Col>
-              </Row>
-               
+                <Row>
+                  <Col span={24}>
+                    <h2>{item.title}</h2>
+                    <div className="underline">
+                      <Flex>
+                        <Progress percent={item.progress} />
+                      </Flex>
+                    </div>
+                  </Col>
+                </Row>
               </div>
-    
             </div>
-          
           ))}
-           
-           </div></div>
-           <ImageSlider/>
-        
-        </>
-      )
+        </div>
+      </div>
+      <ImageSlider />
+    </>
+  );
 }
 
 export default Dashcontent;
+

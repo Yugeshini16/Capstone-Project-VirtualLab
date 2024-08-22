@@ -2,11 +2,11 @@ import './TheorySteps.css';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import Steps from './Steps';
 
 function TheorySteps() {
     const { subject, index } = useParams();
     const [data, setData] = useState(null);
+    const [selectedStep, setSelectedStep] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -20,30 +20,34 @@ function TheorySteps() {
         fetchData();
     }, [subject, index]);
 
+    const handleStepClick = (stepIndex) => {
+        if (selectedStep === stepIndex) {
+            setSelectedStep(null); // Unselect if the same step is clicked again
+        } else {
+            setSelectedStep(stepIndex);
+        }
+    };
+
     if (!data) {
         return <div>Loading...</div>;
     }
 
     return (
-        <div className="section2">
+        <div className="theory-steps-container">
             <h2>Steps Involved</h2>
-            <div className="contentClm">
-                <div className="stepCLm">
-                    {data.tests.map(test => (
-                        <div key={test._id}>
-                            <h4>Procedure</h4>
-                            <ol>
-                                {test.procedure.map(step => (
-                                    <li key={step._id}>
-                                        <Steps text={step.instruction} />
-                                    </li>
-                                ))}
-                            </ol>
-                        </div>
-                    ))}
-                </div>
-                <img src="/pictures/PracticalSteps_PracticalStepPage.jpg" alt="Practical Steps" />
+            <div className="steps-progress-bar">
+                {data.tests[0].procedure.map((step, stepIndex) => (
+                    <div key={step._id} className={`step-item ${selectedStep === stepIndex ? 'active' : ''}`} onClick={() => handleStepClick(stepIndex)}>
+                        <div className="step-number">{stepIndex + 1}</div>
+                    </div>
+                ))}
             </div>
+            {selectedStep !== null && (
+                <div className="step-content">
+                    <p>{data.tests[0].procedure[selectedStep].instruction}</p>
+                    <img src={data.tests[0].procedure[selectedStep].Image} alt="Step Image" />
+                </div>
+            )}
         </div>
     );
 }

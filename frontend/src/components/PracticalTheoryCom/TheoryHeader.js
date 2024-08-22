@@ -32,17 +32,18 @@ function TheoryHeader(){
                     <h2>{test.test_name}</h2>
                     </div>
             ))}
-                <span className='date'>Syllabus Updated 2024 Unit 01 Mechanics</span>
+                <span className='date'><center>Syllabus Updated 2024 Unit 01 Mechanics</center></span>
                
             </div>
 
             <div className='Featuredimage'>
-            {data.tests.map(test => (
+            /*{data.tests.map(test => (
                 <div key={test._id}>
-                    <h2>{test.test_name}</h2>
+                   
+                    <img src={test.image} alt={test.test_name} />
+
                     </div>
             ))}
-                <img src="/pictures/01.jpg" alt="featured"/>
             </div>
         </>
     )

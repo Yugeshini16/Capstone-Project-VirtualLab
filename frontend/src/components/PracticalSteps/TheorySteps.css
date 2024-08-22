@@ -1,43 +1,55 @@
-.contentClm{
-    display: flex;
-    flex-direction: row;
-    margin: 50px 250px 50px 250px;
-    max-width: 1440px;
+.theory-steps-container {
+    width: 100%;
+    padding: 20px;
 }
 
-.contentClm img{
-    width: 570px;
-    height: 700px;
-    object-fit: cover;
-    justify-items: center;
-    vertical-align: middle;
+.steps-progress-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
-.Step{
-    width:400px;
-    height: 60px;
-    background-color: #BFCDE9;
-    border-radius: 70px;
-    border-color: #151854;
+.step-item {
     display: flex;
-    flex-direction: row;
-    padding: 0 60px 40px 60px;
-    margin: 20px 50px 30px 0px;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.step-item.active, .step-item:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.step-number {
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.step-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
-
-}
-.Step h4{
-    font-size: 19px;
-    font-family: 'poppins';
-    font-weight: 600;
-    
 }
 
-.Step .checkbox{
-    margin: 5px;
-    color: #151854;
+.step-content img {
+    margin-top: 20px;
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
 }
 
-.stepCLm {
-    align-content: center;
+.step-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }

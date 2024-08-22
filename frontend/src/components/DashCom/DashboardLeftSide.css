@@ -12,21 +12,27 @@
 .menu p {
     font-size: 18px;
     padding-left: 20px;
-
-
 }
 
-.Dash1 {
+.Dash1 a,
+.menu--list .item {
     margin: 1px auto;
     color: white;
     height: 40px;
-    background-image: linear-gradient(to left, #80b3ea, #6b3fa0);
-    width: 242px;
+   width: 240px;
     display: flex;
     justify-content: center;
     border-radius: 14px;
     align-items: center;
-    padding-top: 10px;
+    padding: 10px;
+    text-decoration: none;
+}
+ .active {
+    background-image: linear-gradient(to left, #80b3ea, #6b3fa0);
+    width: 240px;
+    border-radius: 14px;
+    margin: 1px auto;
+
 }
 
 .menubelowsearch p {
@@ -46,11 +52,12 @@
 .menu--list {
     display: flex;
     flex-direction: column;
-    margin: 25px 0 0 40px;
-    gap: 35px;
+    margin: 25px 0 0 0px;
+    
+    gap: 45px;
 }
 
-.menu--list .item {
+/*.menu--list .item {
     display: flex;
     font-size: 15px;
     text-decoration: none;
@@ -60,14 +67,13 @@
     border-radius: 10px;
     transition: 0.3s ease-in-out;
     color: #fff;
-}
+}*/
 
 .menu--list .item:hover {
     background: linear-gradient(#2D386F, #94A5FF);
     color: #d9d9d9;
-    width: 180px;
+    cursor: pointer;
 }
-
 
 .search-box1 {
     border-radius: 18px;
